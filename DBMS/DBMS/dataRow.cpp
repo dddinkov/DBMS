@@ -11,48 +11,88 @@ DataRow::DataRow()
 
 void DataRow::add(const DataColumn& key, const std::string& val)
 {
-	try
-	{
-		validate(key, val);
-		std::pair<const DataColumn, std::string> pair(key, val);
-		record.insert(pair);
-	}
-	catch (std::exception e)
-	{
-		std::cout << e.what()  << std::endl;
-	}
+	validate(key, val);
+	record.insert(std::pair<const DataColumn, std::string>(key, val));
 }
 
 void DataRow::update(const DataColumn& key, const std::string& newVal)
 {
-	try
-	{
-		validate(key, newVal);
-		record[key] = newVal;
-	}
-	catch (std::exception e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	validate(key, newVal);
+	record[key] = newVal;
 }
 
 std::string DataRow::operator[](const DataColumn& col) const
 {
-	// !!! nullptr !!!
-	return record.find(col)->second;
+	return record.at(col);
+}
+
+void DataRow::serialize(std::fstream& os)
+{
+	std::size_t recordSize = record.size();
+	os.write(reinterpret_cast<const char*>(&recordSize), sizeof(std::size_t));
+
+	for (std::pair<const DataColumn, std::string>& pair : record)
+	{
+		std::size_t valueLength = pair.second.size();
+		os.write(reinterpret_cast<const char*>(&valueLength), sizeof(std::size_t));
+		os.write(pair.second.c_str(), valueLength);
+	}
+
+	for (std::pair<DataColumn, std::string> pair : record)
+	{
+		pair.first.serialize(os);
+	}
+}
+
+void DataRow::deserialize(std::fstream& istr)
+{
+	std::size_t recordSize;
+	istr.read(reinterpret_cast<char*>(&recordSize), sizeof(std::size_t));
+
+	std::vector<std::string> values;
+	for (std::size_t i = 0; i < recordSize; ++i)
+	{
+		std::size_t valueLength;
+		istr.read(reinterpret_cast<char*>(&valueLength), sizeof(std::size_t));
+		char* buffer = new char[valueLength + 1];
+		istr.read(buffer, valueLength);
+		buffer[valueLength] = '\0';
+		values.push_back(buffer);
+	}
+
+	for (std::size_t i = 0; i < recordSize; ++i)
+	{
+		DataColumn key;
+		key.deserialize(istr);
+
+		record.insert(std::pair<DataColumn, std::string>(key, values[i]));
+	}
 }
 
 void DataRow::validate(const DataColumn& key, const std::string& val)
 {
-	if (key.type == Type::Int)
+	if (key.type == Type::String && val[0] != '\"' && val[val.size() - 1] != '\"')
+	{
+		throw std::exception("Trying to alter field with type string went wrong.");
+	}
+	else if (key.type == Type::Bool &&
+		!(val == "True" || val == "False"))
+	{
+		throw std::exception("Trying to alter field with type bool went wrong.");
+	}
+	else if (key.type == Type::Int && val.find('.') != -1)
+	{
+		throw std::exception("Trying to alter field with type int went wrong.");
+	}
+	else if (key.type == Type::Int)
 	{
 		try
 		{
-			int temp = std::stoi(val);
+			double temp = std::stoi(val);
 		}
 		catch (std::exception)
 		{
-			throw std::exception("Trying to alter field with type Int went wrong.");
+			throw std::exception("Trying to alter field with type int went wrong.");
 		}
 	}
 	else if (key.type == Type::Double)
@@ -63,32 +103,18 @@ void DataRow::validate(const DataColumn& key, const std::string& val)
 		}
 		catch (std::exception)
 		{
-			throw std::exception("Trying to alter field with type Double went wrong.");
+			throw std::exception("Trying to alter field with type double went wrong.");
 		}
-	}
-	else if (key.type == Type::Bool &&
-		!(val == "True" || val == "False"))
-	{
-		throw std::exception("Trying to alter field with type Bool went wrong.");
 	}
 }
 
 std::ostream& operator<<(std::ostream& os, const DataRow& row)
 {
-	for (std::pair<DataColumn, std::string> pair : row.record)
+	for (const std::pair<DataColumn, std::string>& pair : row.record)
 	{
-		if (pair.first.type == Type::String)
-		{
-			std::string toPrint = "\"" + pair.second + "\"";
-			os << std::left << std::setw(20) << toPrint;
-		}
-		else
-		{
-			os << std::left << std::setw(20) << pair.second;
-		}
-
+		os << pair.second;
+		os << " ";
 	}
-	os << '\n';
 	return os;
 }
 

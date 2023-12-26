@@ -13,27 +13,159 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Parser">
+      <UniqueIdentifier>{0a2dfe87-b940-4337-b1d3-6bff5df4c8c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Table">
+      <UniqueIdentifier>{da97d732-101c-4a8d-9eda-4b1231f3fe0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Parser\Header Files">
+      <UniqueIdentifier>{ada26ff0-fea1-414e-8167-6945ca782e4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Parser\Source Files">
+      <UniqueIdentifier>{d4dabf10-09de-4e51-8f74-027d89ec6fbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Parser\Tokenizer">
+      <UniqueIdentifier>{3c18d572-fd41-401f-9c79-82fb79c49a69}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DBMS.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dataRow.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="table.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Table</Filter>
+    </ClCompile>
+    <ClCompile Include="dataRow.cpp">
+      <Filter>Table</Filter>
+    </ClCompile>
+    <ClCompile Include="insertInto.h">
+      <Filter>Parser\Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="createIndex.cpp">
+      <Filter>Parser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="createTable.cpp">
+      <Filter>Parser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="insertInto.cpp">
+      <Filter>Parser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="operation.cpp">
+      <Filter>Parser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="query.cpp">
+      <Filter>Parser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="update.cpp">
+      <Filter>Parser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tokenizer.cpp">
+      <Filter>Parser\Tokenizer</Filter>
+    </ClCompile>
+    <ClCompile Include="condition.cpp">
+      <Filter>Parser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="aggregate.cpp">
+      <Filter>Parser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="whereClause.cpp">
+      <Filter>Parser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="values.cpp">
+      <Filter>Parser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="orderByClause.cpp">
+      <Filter>Parser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="primaryKey.cpp">
+      <Filter>Parser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="whereClauses.cpp">
+      <Filter>Parser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="columnDatatypePairs.cpp">
+      <Filter>Parser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="assignOperations.cpp">
+      <Filter>Parser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="columns.cpp">
+      <Filter>Parser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="aggregates.cpp">
+      <Filter>Parser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="queryArguments.cpp">
+      <Filter>Parser\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="table.h">
+    <ClInclude Include="doctest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="dataColumn.h">
-      <Filter>Header Files</Filter>
+      <Filter>Table</Filter>
     </ClInclude>
     <ClInclude Include="dataRow.h">
-      <Filter>Header Files</Filter>
+      <Filter>Table</Filter>
+    </ClInclude>
+    <ClInclude Include="table.h">
+      <Filter>Table</Filter>
+    </ClInclude>
+    <ClInclude Include="createIndex.h">
+      <Filter>Parser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="createTable.h">
+      <Filter>Parser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="operation.h">
+      <Filter>Parser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="query.h">
+      <Filter>Parser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="update.h">
+      <Filter>Parser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tokenizer.h">
+      <Filter>Parser\Tokenizer</Filter>
+    </ClInclude>
+    <ClInclude Include="condition.h">
+      <Filter>Parser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="aggregate.h">
+      <Filter>Parser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="whereClause.h">
+      <Filter>Parser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="values.h">
+      <Filter>Parser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="orderByClause.h">
+      <Filter>Parser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="primaryKey.h">
+      <Filter>Parser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="whereClauses.h">
+      <Filter>Parser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="columnDatatypePairs.h">
+      <Filter>Parser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="assignOperations.h">
+      <Filter>Parser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="columns.h">
+      <Filter>Parser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="aggregates.h">
+      <Filter>Parser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="queryArguments.h">
+      <Filter>Parser\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

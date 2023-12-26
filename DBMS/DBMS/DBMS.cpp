@@ -2,44 +2,34 @@
 //
 
 #include <iostream>
-#include "table.h"
+#include <sstream>
+#include "operation.h"
 
 int main()
 {
-    Table table;
-    DataColumn col1 = {"Name", Type::String};
-    table.setPK(col1);
-    table.addColumn(col1);
-    DataColumn col2 = { "Age", Type::Int};
-    table.addColumn(col2);
-    DataRow row;
-    row.add(col1,"Tate");
-    row.add(col2, "18");
-    table.addRow(row);
-    row.update(col1, "George");
-    row.update(col2, "23");
-    table.addRow(row);
-    row.update(col1, "Samantha");
-    row.update(col2, "23");
-    table.addRow(row);
-    row.update(col1, "Bertha");
-    row.update(col2, "23");
-    table.addRow(row);
-    row.update(col1, "Henry");
-    row.update(col2, "28");
-    table.addRow(row);
-    std::cout << table;
+    std::istringstream str("SELECT * FROM polpo ORDER BY Name DESC;");
 
-    std::vector<DataColumn> columns;
-    columns.push_back(col2);
-    columns.push_back(col1);
+    Operation* opr = nullptr;
 
-    std::vector<bool> bools;
-    bools.push_back(false);
-    bools.push_back(true);
-    table = table.orderBy(columns, bools);
+    try 
+    {
+        str >> opr;
 
-    std::cout << table;
+        opr->eval();
+
+        if (opr != nullptr)
+        {
+            delete opr;
+        }
+
+        /*Table temp("polpo");
+        temp.read();
+        std::cout << temp;*/
+    }
+    catch (std::exception e)
+    {
+        std::cout << e.what();
+    }
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

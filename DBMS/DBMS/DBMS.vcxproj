@@ -139,14 +139,53 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="aggregate.cpp" />
+    <ClCompile Include="aggregates.cpp" />
+    <ClCompile Include="assignOperations.cpp" />
+    <ClCompile Include="columnDatatypePairs.cpp" />
+    <ClCompile Include="columns.cpp" />
+    <ClCompile Include="condition.cpp" />
+    <ClCompile Include="createIndex.cpp" />
+    <ClCompile Include="createTable.cpp" />
     <ClCompile Include="dataRow.cpp" />
     <ClCompile Include="DBMS.cpp" />
+    <ClCompile Include="insertInto.cpp" />
+    <ClCompile Include="insertInto.h" />
+    <ClCompile Include="operation.cpp" />
+    <ClCompile Include="orderByClause.cpp" />
+    <ClCompile Include="primaryKey.cpp" />
+    <ClCompile Include="query.cpp" />
+    <ClCompile Include="queryArguments.cpp" />
     <ClCompile Include="table.cpp" />
+    <ClCompile Include="tokenizer.cpp" />
+    <ClCompile Include="update.cpp" />
+    <ClCompile Include="values.cpp" />
+    <ClCompile Include="whereClause.cpp" />
+    <ClCompile Include="whereClauses.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="aggregate.h" />
+    <ClInclude Include="aggregates.h" />
+    <ClInclude Include="assignOperations.h" />
+    <ClInclude Include="columnDatatypePairs.h" />
+    <ClInclude Include="columns.h" />
+    <ClInclude Include="condition.h" />
+    <ClInclude Include="createIndex.h" />
+    <ClInclude Include="createTable.h" />
     <ClInclude Include="dataColumn.h" />
     <ClInclude Include="dataRow.h" />
+    <ClInclude Include="doctest.h" />
+    <ClInclude Include="operation.h" />
+    <ClInclude Include="orderByClause.h" />
+    <ClInclude Include="primaryKey.h" />
+    <ClInclude Include="query.h" />
+    <ClInclude Include="queryArguments.h" />
     <ClInclude Include="table.h" />
+    <ClInclude Include="tokenizer.h" />
+    <ClInclude Include="update.h" />
+    <ClInclude Include="values.h" />
+    <ClInclude Include="whereClause.h" />
+    <ClInclude Include="whereClauses.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

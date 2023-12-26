@@ -1,7 +1,8 @@
 #pragma once
 
 #include "dataColumn.h"
-#include <ostream>
+#include <fstream>
+#include <utility>
 #include <unordered_map>
 
 class DataRow {
@@ -14,6 +15,10 @@ public:
 	void update(const DataColumn&, const std::string&);
 
 	std::string operator[](const DataColumn&) const;
+
+	void serialize(std::fstream&);
+
+	void deserialize(std::fstream&);
 
 	friend std::ostream& operator<<(std::ostream&, const DataRow&);
 
