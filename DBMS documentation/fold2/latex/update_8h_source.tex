@@ -1,0 +1,33 @@
+\doxysection{update.\+h}
+\hypertarget{update_8h_source}{}\label{update_8h_source}\index{C:/Users/ACER/Desktop/school/FMI-\/CS/3 s/SDP/DBMS/DBMS/update.h@{C:/Users/ACER/Desktop/school/FMI-\/CS/3 s/SDP/DBMS/DBMS/update.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once\ }}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}operation.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}assignOperations.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}whereClause.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_update}{Update}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_operation}{Operation}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ std::string\ table;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{struct_assign_operations}{AssignOperations}}\ operations;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{struct_where_clause}{WhereClause}}\ whereClause;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_update_afc49ab033c8575cc08b7795af4c6b2a1}{Update}}();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_update_afc49ab033c8575cc08b7795af4c6b2a1}{Update}}(\textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_assign_operations}{AssignOperations}}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_where_clause}{WhereClause}}\&);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_update_a4a4fee50ad070016c30d7277f74f5aa0}{eval}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_operation}{Operation}}*\ \mbox{\hyperlink{class_update_aa019a59355b0cc04668b257ad5f49ab1}{clone}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{classstd_1_1basic__istream}{std::istream}}\&\ \mbox{\hyperlink{class_update_af87840358f867ff990c878eaf26c4419}{operator>>}}(\mbox{\hyperlink{classstd_1_1basic__istream}{std::istream}}\&,\ \mbox{\hyperlink{class_update}{Update}}*\&);}
+\DoxyCodeLine{00057\ \};}
+
+\end{DoxyCode}

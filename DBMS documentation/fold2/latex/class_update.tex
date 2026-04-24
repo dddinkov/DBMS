@@ -1,0 +1,83 @@
+\doxysection{Update Class Reference}
+\hypertarget{class_update}{}\label{class_update}\index{Update@{Update}}
+
+
+Class \doxylink{class_update}{Update}, inherits from \doxylink{class_operation}{Operation}.  
+
+
+
+
+{\ttfamily \#include $<$update.\+h$>$}
+
+Inheritance diagram for Update\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_update}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_update_afc49ab033c8575cc08b7795af4c6b2a1}\label{class_update_afc49ab033c8575cc08b7795af4c6b2a1} 
+{\bfseries Update} ()
+\begin{DoxyCompactList}\small\item\em A default constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_update_a6a69b86b14e13bef53554cb7ec580a07}\label{class_update_a6a69b86b14e13bef53554cb7ec580a07} 
+{\bfseries Update} (const std\+::string \&, const \mbox{\hyperlink{struct_assign_operations}{Assign\+Operations}} \&, const \mbox{\hyperlink{struct_where_clause}{Where\+Clause}} \&)
+\begin{DoxyCompactList}\small\item\em A parameterized constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_update_a4a4fee50ad070016c30d7277f74f5aa0}{eval}} () const
+\begin{DoxyCompactList}\small\item\em \doxylink{class_update}{Update} evaluation function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_operation}{Operation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_update_aa019a59355b0cc04668b257ad5f49ab1}{clone}} () const
+\begin{DoxyCompactList}\small\item\em A clone function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_operation}{Operation}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Operation} ()
+\begin{DoxyCompactList}\small\item\em A default destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_update_af87840358f867ff990c878eaf26c4419}\label{class_update_af87840358f867ff990c878eaf26c4419} 
+\mbox{\hyperlink{classstd_1_1basic__istream}{std\+::istream}} \& {\bfseries operator$>$$>$} (\mbox{\hyperlink{classstd_1_1basic__istream}{std\+::istream}} \&, \mbox{\hyperlink{class_update}{Update}} \texorpdfstring{$\ast$}{*}\&)
+\begin{DoxyCompactList}\small\item\em operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} overload for inputting an \doxylink{class_update}{Update} operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class \doxylink{class_update}{Update}, inherits from \doxylink{class_operation}{Operation}. 
+
+Following the following rule from the grammar\+: UPDATE = "{}\+UPDATE"{} TABLE "{}\+SET"{} ASSIGN\+\_\+\+OPERATIONS WHERE\+\_\+\+CLAUSE "{};"{} 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_update_aa019a59355b0cc04668b257ad5f49ab1}\label{class_update_aa019a59355b0cc04668b257ad5f49ab1} 
+\index{Update@{Update}!clone@{clone}}
+\index{clone@{clone}!Update@{Update}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_operation}{Operation}} \texorpdfstring{$\ast$}{*} Update\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+A clone function. 
+
+
+
+Implements \mbox{\hyperlink{class_operation_a01fa690af06d0010f8bf9d0ab3fa2c5d}{Operation}}.
+
+\Hypertarget{class_update_a4a4fee50ad070016c30d7277f74f5aa0}\label{class_update_a4a4fee50ad070016c30d7277f74f5aa0} 
+\index{Update@{Update}!eval@{eval}}
+\index{eval@{eval}!Update@{Update}}
+\doxysubsubsection{\texorpdfstring{eval()}{eval()}}
+{\footnotesize\ttfamily void Update\+::eval (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxylink{class_update}{Update} evaluation function. 
+
+
+
+Implements \mbox{\hyperlink{class_operation_a5311e2b39b4298f84a5f0332c7c7acc1}{Operation}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+ACER/\+Desktop/school/\+FMI-\/\+CS/3 s/\+SDP/\+DBMS/\+DBMS/update.\+h\item 
+C\+:/\+Users/\+ACER/\+Desktop/school/\+FMI-\/\+CS/3 s/\+SDP/\+DBMS/\+DBMS/update.\+cpp\end{DoxyCompactItemize}

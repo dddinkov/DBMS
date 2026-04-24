@@ -1,0 +1,92 @@
+\doxysection{Create\+Table Class Reference}
+\hypertarget{class_create_table}{}\label{class_create_table}\index{CreateTable@{CreateTable}}
+
+
+Class \doxylink{class_create_table}{Create\+Table}, inherits \doxylink{class_operation}{Operation}.  
+
+
+
+
+{\ttfamily \#include $<$create\+Table.\+h$>$}
+
+Inheritance diagram for Create\+Table\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_create_table}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_create_table_a796e2c89caa4a83e58ab157bb4330233}\label{class_create_table_a796e2c89caa4a83e58ab157bb4330233} 
+{\bfseries Create\+Table} ()
+\begin{DoxyCompactList}\small\item\em A default constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_create_table_ad98f1684aa9dacb7f29405af2545d142}\label{class_create_table_ad98f1684aa9dacb7f29405af2545d142} 
+{\bfseries Create\+Table} (const std\+::string \&, const \mbox{\hyperlink{struct_column_datatype_pairs}{Column\+Datatype\+Pairs}} \&, \mbox{\hyperlink{struct_primary_key}{Primary\+Key}} \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em A parameterized constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_create_table_a1ede3ca0bfe1cee1817aa3e223c8e796}\label{class_create_table_a1ede3ca0bfe1cee1817aa3e223c8e796} 
+{\bfseries Create\+Table} (const \mbox{\hyperlink{class_create_table}{Create\+Table}} \&)
+\begin{DoxyCompactList}\small\item\em A copy constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_create_table_a1a5c5b5e0528b48c014bfd729bd3c6a3}\label{class_create_table_a1a5c5b5e0528b48c014bfd729bd3c6a3} 
+\mbox{\hyperlink{class_create_table}{Create\+Table}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_create_table}{Create\+Table}} \&)
+\begin{DoxyCompactList}\small\item\em operator= overload. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_create_table_a482a645eaf25afd1d06233f2694c12b5}{eval}} () const
+\begin{DoxyCompactList}\small\item\em \doxylink{class_create_table}{Create\+Table} evaluation function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_operation}{Operation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_create_table_ac6b76faddef2219493986019640786b6}{clone}} () const
+\begin{DoxyCompactList}\small\item\em A clone function. \end{DoxyCompactList}\item 
+\Hypertarget{class_create_table_a2e04f553291800794c3ef460b1d71d9d}\label{class_create_table_a2e04f553291800794c3ef460b1d71d9d} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Create\+Table} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{class_create_table}{Create\+Table} destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_operation}{Operation}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Operation} ()
+\begin{DoxyCompactList}\small\item\em A default destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_create_table_ac3cb60f653b53a76b0dbeda056d77232}\label{class_create_table_ac3cb60f653b53a76b0dbeda056d77232} 
+\mbox{\hyperlink{classstd_1_1basic__istream}{std\+::istream}} \& {\bfseries operator$>$$>$} (\mbox{\hyperlink{classstd_1_1basic__istream}{std\+::istream}} \&, \mbox{\hyperlink{class_create_table}{Create\+Table}} \texorpdfstring{$\ast$}{*}\&)
+\begin{DoxyCompactList}\small\item\em operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} overload for inputting a \doxylink{class_create_table}{Create\+Table} operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class \doxylink{class_create_table}{Create\+Table}, inherits \doxylink{class_operation}{Operation}. 
+
+Following the following grammar rule\+: CREATE\+\_\+\+TABLE = "{}\+CREATE"{} "{}\+TABLE"{} TABLE "{}("{} COLUMN\+\_\+\+DATATYPE\+\_\+\+PAIRS "{})"{} \mbox{[}PRIMARY\+\_\+\+KEY\mbox{]} "{};"{} 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_create_table_ac6b76faddef2219493986019640786b6}\label{class_create_table_ac6b76faddef2219493986019640786b6} 
+\index{CreateTable@{CreateTable}!clone@{clone}}
+\index{clone@{clone}!CreateTable@{CreateTable}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_operation}{Operation}} \texorpdfstring{$\ast$}{*} Create\+Table\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+A clone function. 
+
+
+
+Implements \mbox{\hyperlink{class_operation_a01fa690af06d0010f8bf9d0ab3fa2c5d}{Operation}}.
+
+\Hypertarget{class_create_table_a482a645eaf25afd1d06233f2694c12b5}\label{class_create_table_a482a645eaf25afd1d06233f2694c12b5} 
+\index{CreateTable@{CreateTable}!eval@{eval}}
+\index{eval@{eval}!CreateTable@{CreateTable}}
+\doxysubsubsection{\texorpdfstring{eval()}{eval()}}
+{\footnotesize\ttfamily void Create\+Table\+::eval (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxylink{class_create_table}{Create\+Table} evaluation function. 
+
+
+
+Implements \mbox{\hyperlink{class_operation_a5311e2b39b4298f84a5f0332c7c7acc1}{Operation}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+ACER/\+Desktop/school/\+FMI-\/\+CS/3 s/\+SDP/\+DBMS/\+DBMS/create\+Table.\+h\item 
+C\+:/\+Users/\+ACER/\+Desktop/school/\+FMI-\/\+CS/3 s/\+SDP/\+DBMS/\+DBMS/create\+Table.\+cpp\end{DoxyCompactItemize}

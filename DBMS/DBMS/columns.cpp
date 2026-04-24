@@ -58,6 +58,9 @@ std::istream& operator>>(std::istream& istr, Columns*& cols)
 			token = tokenizer.peek();
 			if (token.type != Tokenizer::IDENTIFIER)
 			{
+				delete cols;
+				cols = nullptr;
+
 				std::string message = "Unexpected token: " + token.value + ".\nExpected: IDENTIFIER";
 				throw std::invalid_argument(message);
 			}

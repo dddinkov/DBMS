@@ -75,7 +75,7 @@ void CreateTable::eval() const
 	}
 
 	table.save();
-	std::cout << "Saved!\n";
+	std::cout << "Table \"" << this->table << "\" created." << std::endl;
 }
 
 Operation* CreateTable::clone() const
@@ -99,8 +99,6 @@ std::istream& operator>>(std::istream& istr, CreateTable*& createTable)
 	tokenizer.getNextToken();
 
 	token = tokenizer.peek();
-
-	createTable = nullptr;
 
 	if (token.value != "TABLE")
 	{
@@ -126,6 +124,9 @@ std::istream& operator>>(std::istream& istr, CreateTable*& createTable)
 
 	if (token.value != "(")
 	{
+		delete createTable;
+		createTable = nullptr;
+
 		std::string message = "Unexpected token: " + token.value + ".\nExpected: (.";
 		throw std::invalid_argument(message);
 	}
@@ -133,13 +134,26 @@ std::istream& operator>>(std::istream& istr, CreateTable*& createTable)
 	tokenizer.getNextToken();
 
 	ColumnDatatypePairs pairs;
-	istr >> pairs;
+	try
+	{
+		istr >> pairs;
+	}
+	catch (std::exception e)
+	{
+		delete createTable;
+		createTable = nullptr;
+
+		throw e;
+	}
 	createTable->pairs = pairs;
 
 	token = tokenizer.peek();
 
 	if (token.value != ")")
 	{
+		delete createTable;
+		createTable = nullptr;
+
 		std::string message = "Unexpected token: " + token.value + ".\nExpected: ).";
 		throw std::invalid_argument(message);
 	}
@@ -156,10 +170,25 @@ std::istream& operator>>(std::istream& istr, CreateTable*& createTable)
 
 	PrimaryKey pk;
 
-	istr >> pk;
+	try
+	{
+		istr >> pk;
+	}
+	catch (std::exception e)
+	{
+		delete createTable;
+		createTable = nullptr;
+
+		throw e;
+	}
+
+	token = tokenizer.peek();
 
 	if (token.value != ";")
 	{
+		delete createTable;
+		createTable = nullptr;
+
 		std::string message = "Unexpected token: " + token.value + ".\nExpected: ;.";
 		throw std::invalid_argument(message);
 	}

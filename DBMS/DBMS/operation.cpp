@@ -42,14 +42,14 @@ std::istream& operator>>(std::istream& istr, Operation*& oper)
 
 	CreateIndex* ind;
 	istr >> ind;
-	if (ind == nullptr)
+	if (ind != nullptr)
 	{
 		oper = ind;
 		return istr;
 	}
 
 	oper = nullptr;
-	throw std::exception("ERROR:Invalid command!");
+	throw std::runtime_error("ERROR:Invalid command!");
 	return istr;
 }
 

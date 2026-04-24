@@ -1,0 +1,78 @@
+\doxysection{Operation Class Reference}
+\hypertarget{class_operation}{}\label{class_operation}\index{Operation@{Operation}}
+
+
+Abstract class \doxylink{class_operation}{Operation}.  
+
+
+
+
+{\ttfamily \#include $<$operation.\+h$>$}
+
+Inheritance diagram for Operation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_operation}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_operation_a5311e2b39b4298f84a5f0332c7c7acc1}{eval}} () const =0
+\begin{DoxyCompactList}\small\item\em A pure virtual function to evaluate the operation. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_operation}{Operation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_operation_a01fa690af06d0010f8bf9d0ab3fa2c5d}{clone}} () const =0
+\begin{DoxyCompactList}\small\item\em A pure virtual clone function. \end{DoxyCompactList}\item 
+\Hypertarget{class_operation_a14089623bd8a73e73375353c3d8a4b6e}\label{class_operation_a14089623bd8a73e73375353c3d8a4b6e} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Operation} ()
+\begin{DoxyCompactList}\small\item\em A default destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_operation_ad0ba33b0d64e30422d9124863db65807}\label{class_operation_ad0ba33b0d64e30422d9124863db65807} 
+\mbox{\hyperlink{classstd_1_1basic__istream}{std\+::istream}} \& {\bfseries operator$>$$>$} (\mbox{\hyperlink{classstd_1_1basic__istream}{std\+::istream}} \&, \mbox{\hyperlink{class_operation}{Operation}} \texorpdfstring{$\ast$}{*}\&)
+\begin{DoxyCompactList}\small\item\em A friendly operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} overload to input an \doxylink{class_operation}{Operation}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract class \doxylink{class_operation}{Operation}. 
+
+Follows the following rule from the grammar\+: OPERATION = QUERY \texorpdfstring{$\vert$}{|} CREATE\+\_\+\+TABLE \texorpdfstring{$\vert$}{|} INSERT\+\_\+\+INTO \texorpdfstring{$\vert$}{|} UPDATE \texorpdfstring{$\vert$}{|} CREATE\+\_\+\+INDEX 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_operation_a01fa690af06d0010f8bf9d0ab3fa2c5d}\label{class_operation_a01fa690af06d0010f8bf9d0ab3fa2c5d} 
+\index{Operation@{Operation}!clone@{clone}}
+\index{clone@{clone}!Operation@{Operation}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_operation}{Operation}} \texorpdfstring{$\ast$}{*} Operation\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+A pure virtual clone function. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_create_index_adde5c2e2987aeaaed83a3d5e2ee6f4ae}{Create\+Index}}, \mbox{\hyperlink{class_create_table_ac6b76faddef2219493986019640786b6}{Create\+Table}}, \mbox{\hyperlink{class_insert_into_a69246bacd0c85074ba9445a690a45370}{Insert\+Into}}, \mbox{\hyperlink{class_query_ac0582f91174a9f1a67b2d38782c7fcc2}{Query}}, and \mbox{\hyperlink{class_update_aa019a59355b0cc04668b257ad5f49ab1}{Update}}.
+
+\Hypertarget{class_operation_a5311e2b39b4298f84a5f0332c7c7acc1}\label{class_operation_a5311e2b39b4298f84a5f0332c7c7acc1} 
+\index{Operation@{Operation}!eval@{eval}}
+\index{eval@{eval}!Operation@{Operation}}
+\doxysubsubsection{\texorpdfstring{eval()}{eval()}}
+{\footnotesize\ttfamily virtual void Operation\+::eval (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+A pure virtual function to evaluate the operation. 
+
+
+
+Implemented in \mbox{\hyperlink{class_create_index_a1cdeed7d0388d18c7e6e165d82d7331d}{Create\+Index}}, \mbox{\hyperlink{class_create_table_a482a645eaf25afd1d06233f2694c12b5}{Create\+Table}}, \mbox{\hyperlink{class_insert_into_a63ebf932c2a8c90a9a4cb5244174207c}{Insert\+Into}}, \mbox{\hyperlink{class_query_a3941a135faddb850189054d02200a745}{Query}}, and \mbox{\hyperlink{class_update_a4a4fee50ad070016c30d7277f74f5aa0}{Update}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+ACER/\+Desktop/school/\+FMI-\/\+CS/3 s/\+SDP/\+DBMS/\+DBMS/operation.\+h\item 
+C\+:/\+Users/\+ACER/\+Desktop/school/\+FMI-\/\+CS/3 s/\+SDP/\+DBMS/\+DBMS/operation.\+cpp\end{DoxyCompactItemize}

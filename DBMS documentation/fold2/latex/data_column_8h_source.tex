@@ -1,0 +1,57 @@
+\doxysection{data\+Column.\+h}
+\hypertarget{data_column_8h_source}{}\label{data_column_8h_source}\index{C:/Users/ACER/Desktop/school/FMI-\/CS/3 s/SDP/DBMS/DBMS/dataColumn.h@{C:/Users/ACER/Desktop/school/FMI-\/CS/3 s/SDP/DBMS/DBMS/dataColumn.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{enum}\ Type\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ String,}
+\DoxyCodeLine{00016\ \ \ \ \ Int,}
+\DoxyCodeLine{00017\ \ \ \ \ Double,}
+\DoxyCodeLine{00018\ \ \ \ \ Bool,}
+\DoxyCodeLine{00019\ \ \ \ \ Null}
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_data_column}{DataColumn}}\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_data_column_aa6af5ec6409713f92dc75eaa51786b7e}{name}};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \ \ \ \ Type\ \mbox{\hyperlink{struct_data_column_abcb2888c500fd21e0105ca907958a931}{type}};}
+\DoxyCodeLine{00032\ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_data_column_ab66edd6e17057a6e54d79e21dca5f839}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_data_column}{DataColumn}}\&\ other);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_data_column_a9d07e63e3b6ef1ae65d239a012019503}{serialize}}(std::fstream\&\ os);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_data_column_a8956f02c17c57abf2efd93e38c3f7461}{deserialize}}(std::fstream\&\ istr);}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{namespace\ }std}
+\DoxyCodeLine{00055\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{struct\ }hash<\mbox{\hyperlink{struct_data_column}{DataColumn}}>}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structstd_1_1hash_3_01_data_column_01_4_a9828aa2f16e1635176115b48befc4098}{operator()}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_data_column}{DataColumn}}\&\ col)\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::hash<std::string>()(col.name);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \};}
+\DoxyCodeLine{00070\ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{namespace\ }std}
+\DoxyCodeLine{00073\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{struct\ }equal\_to<\mbox{\hyperlink{struct_data_column}{DataColumn}}>}
+\DoxyCodeLine{00079\ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structstd_1_1equal__to_3_01_data_column_01_4_a30cb95f45b003d1078ecfa5ae4c3ddf4}{operator()}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_data_column}{DataColumn}}\&\ rcol,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_data_column}{DataColumn}}\&\ lcol)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00084\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rcol.\mbox{\hyperlink{struct_data_column_aa6af5ec6409713f92dc75eaa51786b7e}{name}}\ ==\ lcol.\mbox{\hyperlink{struct_data_column_aa6af5ec6409713f92dc75eaa51786b7e}{name}};}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \};}
+\DoxyCodeLine{00088\ \}}
+
+\end{DoxyCode}

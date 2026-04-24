@@ -24,7 +24,10 @@ void Update::eval() const
 		values.push_back(cond.value);
 	}
 
-	table.update(cols, values, whereClause.cond.col, whereClause.cond.value, whereClause.cond.op);
+	std::size_t updatedRows = table.update(cols, values, whereClause.cond.col, whereClause.cond.op, whereClause.cond.value);
+
+	(updatedRows == 1) ? std::cout << "1 row updated." << std::endl : std::cout << updatedRows << " rows updated." << std::endl;
+
 	table.save();
 }
 
@@ -65,20 +68,36 @@ std::istream& operator>>(std::istream& istr, Update*& update)
 
 	if (token.value != "SET")
 	{
+		delete update;
+		update = nullptr;
+
 		std::string message = "Unexpected token: " + token.value + ".\nExpected: SET.";
 		throw std::invalid_argument(message);
 	}
 
 	tokenizer.getNextToken();
 
-	istr >> update->operations;
+	try
+	{
+		istr >> update->operations;
 
-	istr >> update->whereClause;
+		istr >> update->whereClause;
+	}
+	catch (std::exception e)
+	{
+		delete update;
+		update = nullptr;
+
+		throw e;
+	}
 
 	token = tokenizer.peek();
 
 	if (token.value != ";")
 	{
+		delete update;
+		update = nullptr;
+
 		std::string message = "Unexpected token: " + token.value + ".\nExpected: ;.";
 		throw std::invalid_argument(message);
 	}

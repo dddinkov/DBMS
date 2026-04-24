@@ -2,6 +2,7 @@
 #include "tokenizer.h"
 #include "table.h"
 #include <exception>
+#include <iostream>
 
 InsertInto::InsertInto() {}
 
@@ -16,11 +17,19 @@ void InsertInto::eval() const
 	Table table(this->table);
 	table.read();
 
-	table.insert(values.literals);
+	try
+	{
+		table.insert(values.literals);
 
-	table.save();
+		table.save();
 
-	std::cout << "Values inserted successfully." << std::endl;
+		std::cout << "Record inserted." << std::endl;
+	}
+	catch (std::exception e)
+	{
+		std::cout << e.what() << "\n";
+		std::cout << "Record not inserted." << std::endl;
+	}
 }
 
 Operation* InsertInto::clone() const
@@ -31,7 +40,9 @@ Operation* InsertInto::clone() const
 std::istream& operator>>(std::istream& istr, InsertInto*& insertInto)
 {
 	Tokenizer tokenizer(istr);
+
 	typename Tokenizer::Token token = tokenizer.peek();
+
 	insertInto = nullptr;
 
 	if (token.value != "INSERT")
@@ -45,7 +56,7 @@ std::istream& operator>>(std::istream& istr, InsertInto*& insertInto)
 
 	if (token.value != "INTO")
 	{
-		std::string message = "Undexpected token: " + token.value + ".\nExpected: INTO";
+		std::string message = "Unexpected token: " + token.value + ".\nExpected: INTO";
 		throw std::invalid_argument(message);
 	}
 
@@ -56,7 +67,7 @@ std::istream& operator>>(std::istream& istr, InsertInto*& insertInto)
 
 	if (token.type != Tokenizer::IDENTIFIER)
 	{
-		std::string message = "Undexpected token: " + token.value + ".\nExpected: IDENTIFIER";
+		std::string message = "Unexpected token: " + token.value + ".\nExpected: IDENTIFIER";
 		throw std::invalid_argument(message);
 	}
 
@@ -69,19 +80,35 @@ std::istream& operator>>(std::istream& istr, InsertInto*& insertInto)
 
 	if (token.value != "(")
 	{
-		std::string message = "Undexpected token: " + token.value + ".\nExpected: (";
+		delete insertInto;
+		insertInto = nullptr;
+
+		std::string message = "Unexpected token: " + token.value + ".\nExpected: (";
 		throw std::invalid_argument(message);
 	}
 
 	tokenizer.getNextToken();
 
-	istr >> insertInto->values;
+	try
+	{
+		istr >> insertInto->values;
+	}
+	catch (std::exception e)
+	{
+		delete insertInto;
+		insertInto = nullptr;
+
+		throw e;
+	}
 
 	token = tokenizer.peek();
 
 	if (token.value != ")")
 	{
-		std::string message = "Undexpected token: " + token.value + ".\nExpected: )";
+		delete insertInto;
+		insertInto = nullptr;
+
+		std::string message = "Unexpected token: " + token.value + ".\nExpected: )";
 		throw std::invalid_argument(message);
 	}
 
@@ -91,7 +118,10 @@ std::istream& operator>>(std::istream& istr, InsertInto*& insertInto)
 
 	if (token.value != ";")
 	{
-		std::string message = "Undexpected token: " + token.value + ".\nExpected: ;";
+		delete insertInto;
+		insertInto = nullptr;
+
+		std::string message = "Unexpected token: " + token.value + ".\nExpected: ;";
 		throw std::invalid_argument(message);
 	}
 

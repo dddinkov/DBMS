@@ -1,0 +1,35 @@
+\doxysection{data\+Row.\+h}
+\hypertarget{data_row_8h_source}{}\label{data_row_8h_source}\index{C:/Users/ACER/Desktop/school/FMI-\/CS/3 s/SDP/DBMS/DBMS/dataRow.h@{C:/Users/ACER/Desktop/school/FMI-\/CS/3 s/SDP/DBMS/DBMS/dataRow.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}dataColumn.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_data_row}{DataRow}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ std::unordered\_map<DataColumn,\ std::string>\ record;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ validate(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_data_column}{DataColumn}}\&,\ \textcolor{keyword}{const}\ std::string\&);}
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_data_row_aa1709e8bc93c7be80e6cf80d2e06424e}{DataRow}}();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_data_row_a6bb22bdeed24a518d1f929a30f0a6a40}{add}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_data_column}{DataColumn}}\&,\ \textcolor{keyword}{const}\ std::string\&);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_data_row_a63895d5d97f90cb6a5bd6cf34855cbb8}{update}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_data_column}{DataColumn}}\&,\ \textcolor{keyword}{const}\ std::string\&);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00049\ \ \ \ \ std::string\ \mbox{\hyperlink{class_data_row_a9e37962b60b8114b3d01420de745a013}{operator[]}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_data_column}{DataColumn}}\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_data_row_ac142b2181c281c64847a3407ece4043c}{serialize}}(std::fstream\&);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_data_row_aaaa92f97075fe8a2c57fbc7959d480ef}{deserialize}}(std::fstream\&);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{classstd_1_1basic__ostream}{std::ostream}}\&\ \mbox{\hyperlink{class_data_row_ada747dcb7bd872b82acdbfb8ff97e2a4}{operator<<}}(\mbox{\hyperlink{classstd_1_1basic__ostream}{std::ostream}}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_data_row}{DataRow}}\&);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_data_row_ab1f92958c6898e4f56725ce1b92e6561}{compare}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_data_column}{DataColumn}}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_data_row}{DataRow}}\&);}
+\DoxyCodeLine{00075\ \};}
+
+\end{DoxyCode}

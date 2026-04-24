@@ -1,0 +1,78 @@
+\doxysection{btree.\+h}
+\hypertarget{btree_8h_source}{}\label{btree_8h_source}\index{C:/Users/ACER/Desktop/school/FMI-\/CS/3 s/SDP/DBMS/DBMS/btree.h@{C:/Users/ACER/Desktop/school/FMI-\/CS/3 s/SDP/DBMS/DBMS/btree.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <cstddef>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}dataColumn.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_node}{Node}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{struct_node_a05a084be78e412f34204e1d4cc1f3b30}{keys}};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00023\ \ \ \ \ std::vector<Node*>\ \mbox{\hyperlink{struct_node_a49baf1d613dc14f1e1e4aad883dde6fe}{children}};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ vector\ of\ vectors\ of\ pointers\ to\ the\ position\ of\ datarows}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ since\ we\ allow\ duplicates\ we\ can\ have\ more\ than\ one.}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00032\ \ \ \ \ std::vector<std::vector<std::streampos>>\ \mbox{\hyperlink{struct_node_aa52648d8a063c0ba1d6d1fdce7ec1aa4}{pointers}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{struct_node_adb273686bf87ac45e6291c65193ac548}{Node}}(std::vector<std::string>,\ std::vector<Node*>,\ std::vector<std::vector<std::streampos>>);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_node_aef17a7d9f2916882a67ae3b69e9630a5}{serialize}}(std::fstream\&);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_node_ae5afd54c60ebab2626f0d310c2d94568}{deserialize}}(std::fstream\&);}
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_b_tree}{BTree}}}
+\DoxyCodeLine{00060\ \{}
+\DoxyCodeLine{00061\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00066\ \ \ \ \ std::size\_t\ t;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ root;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00076\ \ \ \ \ Type\ type;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ copy(\mbox{\hyperlink{struct_node}{Node}}*);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ deallocate(\mbox{\hyperlink{struct_node}{Node}}*);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ splitChild(\mbox{\hyperlink{struct_node}{Node}}*,\ \textcolor{keyword}{const}\ std::size\_t\&);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ insertNonFull(\mbox{\hyperlink{struct_node}{Node}}*,\ \textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ std::streampos\&);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ searchNode(\mbox{\hyperlink{struct_node}{Node}}*\ current,\ \textcolor{keyword}{const}\ std::string\&);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00112\ \ \ \ \ std::vector<std::streampos>\ search(\mbox{\hyperlink{struct_node}{Node}}*,\ \textcolor{keyword}{const}\ std::string\&);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00119\ \ \ \ \ std::vector<std::streampos>\ \mbox{\hyperlink{class_b_tree_a534074ffa1c290326f2093c72e3cc2b5}{inorderTraversal}}(\mbox{\hyperlink{struct_node}{Node}}*);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{bool}\ lessThan(\textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ std::string\&);}
+\DoxyCodeLine{00126\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{class_b_tree_ae3adf097939b1bce7fba5a5d55ff8907}{BTree}}();}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{class_b_tree_ae3adf097939b1bce7fba5a5d55ff8907}{BTree}}(Type,\ \textcolor{keyword}{const}\ std::size\_t\&,\ \mbox{\hyperlink{struct_node}{Node}}*);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00141\ \ \ \ \ \mbox{\hyperlink{class_b_tree_ae3adf097939b1bce7fba5a5d55ff8907}{BTree}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_b_tree}{BTree}}\&);}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{class_b_tree}{BTree}}\&\ \mbox{\hyperlink{class_b_tree_ab54f8954bfebd126ea8b0f727c38e91b}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_b_tree}{BTree}}\&);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00151\ \ \ \ \ \mbox{\hyperlink{class_b_tree_a1d0dbad21ec825a7c8e5625709010e6c}{\string~BTree}}();}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_b_tree_ad25b681ba2a5ee2f0dd8f9ccb3ee6d91}{insert}}(\textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ std::streampos\&);}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00161\ \ \ \ \ std::vector<std::streampos>\ search(\textcolor{keyword}{const}\ std::string\&);}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00167\ \ \ \ \ std::vector<std::streampos>\ \mbox{\hyperlink{class_b_tree_a534074ffa1c290326f2093c72e3cc2b5}{inorderTraversal}}();}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_b_tree_ae27e82c25565e129eca7216ccf73580d}{serialize}}(std::fstream\&);}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_b_tree_a2c09387f16744cff89df714d20ba6da3}{deserialize}}(std::fstream\&);}
+\DoxyCodeLine{00183\ \};}
+
+\end{DoxyCode}

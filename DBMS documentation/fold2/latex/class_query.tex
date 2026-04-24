@@ -1,0 +1,92 @@
+\doxysection{Query Class Reference}
+\hypertarget{class_query}{}\label{class_query}\index{Query@{Query}}
+
+
+Class \doxylink{class_query}{Query}, inherits from \doxylink{class_operation}{Operation}.  
+
+
+
+
+{\ttfamily \#include $<$query.\+h$>$}
+
+Inheritance diagram for Query\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_query}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_query_a4c1633236bdb9fa8d3fd3572a469889d}\label{class_query_a4c1633236bdb9fa8d3fd3572a469889d} 
+{\bfseries Query} ()
+\begin{DoxyCompactList}\small\item\em A default constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_query_a64a3c2f6bab965d907245e406f7a9594}\label{class_query_a64a3c2f6bab965d907245e406f7a9594} 
+{\bfseries Query} (\mbox{\hyperlink{class_query_arguments}{Query\+Arguments}} \texorpdfstring{$\ast$}{*}, const std\+::string \&, const \mbox{\hyperlink{struct_where_clauses}{Where\+Clauses}} \&, const \mbox{\hyperlink{struct_order_by_clause}{Order\+By\+Clause}} \&)
+\begin{DoxyCompactList}\small\item\em A parameterized constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_query_a933926d1d592d5f7209ec40807cf8ff4}\label{class_query_a933926d1d592d5f7209ec40807cf8ff4} 
+{\bfseries Query} (const \mbox{\hyperlink{class_query}{Query}} \&)
+\begin{DoxyCompactList}\small\item\em A copy constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_query_a04d71e7714f4537267517fab93e3eb79}\label{class_query_a04d71e7714f4537267517fab93e3eb79} 
+\mbox{\hyperlink{class_query}{Query}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_query}{Query}} \&)
+\begin{DoxyCompactList}\small\item\em operator= overload. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_query_a3941a135faddb850189054d02200a745}{eval}} () const
+\begin{DoxyCompactList}\small\item\em \doxylink{class_query}{Query} evaluation function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_operation}{Operation}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_query_ac0582f91174a9f1a67b2d38782c7fcc2}{clone}} () const
+\begin{DoxyCompactList}\small\item\em A clone function. \end{DoxyCompactList}\item 
+\Hypertarget{class_query_aad0c964335e9809cc7e22af34e9e8410}\label{class_query_aad0c964335e9809cc7e22af34e9e8410} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Query} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{class_query}{Query} destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_operation}{Operation}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Operation} ()
+\begin{DoxyCompactList}\small\item\em A default destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_query_a9d9ddf17bcad6509b840b9732a573db2}\label{class_query_a9d9ddf17bcad6509b840b9732a573db2} 
+\mbox{\hyperlink{classstd_1_1basic__istream}{std\+::istream}} \& {\bfseries operator$>$$>$} (\mbox{\hyperlink{classstd_1_1basic__istream}{std\+::istream}} \&, \mbox{\hyperlink{class_query}{Query}} \texorpdfstring{$\ast$}{*}\&)
+\begin{DoxyCompactList}\small\item\em operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} overload for inputting a \doxylink{class_query}{Query} operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class \doxylink{class_query}{Query}, inherits from \doxylink{class_operation}{Operation}. 
+
+Following the following rule from the grammar\+: QUERY = "{}\+SELECT"{} QUERY\+\_\+\+ARGUMENTS "{}\+FROM"{} TABLE \mbox{[}WHERE\+\_\+\+CLAUSES\mbox{]} \mbox{[}ORDER\+\_\+\+BY\+\_\+\+CLAUSE\mbox{]} "{};"{} 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_query_ac0582f91174a9f1a67b2d38782c7fcc2}\label{class_query_ac0582f91174a9f1a67b2d38782c7fcc2} 
+\index{Query@{Query}!clone@{clone}}
+\index{clone@{clone}!Query@{Query}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_operation}{Operation}} \texorpdfstring{$\ast$}{*} Query\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+A clone function. 
+
+
+
+Implements \mbox{\hyperlink{class_operation_a01fa690af06d0010f8bf9d0ab3fa2c5d}{Operation}}.
+
+\Hypertarget{class_query_a3941a135faddb850189054d02200a745}\label{class_query_a3941a135faddb850189054d02200a745} 
+\index{Query@{Query}!eval@{eval}}
+\index{eval@{eval}!Query@{Query}}
+\doxysubsubsection{\texorpdfstring{eval()}{eval()}}
+{\footnotesize\ttfamily void Query\+::eval (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxylink{class_query}{Query} evaluation function. 
+
+
+
+Implements \mbox{\hyperlink{class_operation_a5311e2b39b4298f84a5f0332c7c7acc1}{Operation}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+ACER/\+Desktop/school/\+FMI-\/\+CS/3 s/\+SDP/\+DBMS/\+DBMS/query.\+h\item 
+C\+:/\+Users/\+ACER/\+Desktop/school/\+FMI-\/\+CS/3 s/\+SDP/\+DBMS/\+DBMS/query.\+cpp\end{DoxyCompactItemize}

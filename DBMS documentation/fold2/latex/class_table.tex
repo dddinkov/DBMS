@@ -1,0 +1,292 @@
+\doxysection{Table Class Reference}
+\hypertarget{class_table}{}\label{class_table}\index{Table@{Table}}
+
+
+Class table represents a set of Data\+Columns and Data\+Rows.  
+
+
+
+
+{\ttfamily \#include $<$table.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_table_a049f2e06391781ae255c6698869c4ad1}{Table}} ()
+\begin{DoxyCompactList}\small\item\em A default constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_table_a3e65688e32da1cdbb07d1f9ccab92919}\label{class_table_a3e65688e32da1cdbb07d1f9ccab92919} 
+{\bfseries Table} (const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em A constructor with a single parameter for the table\textquotesingle{}s name. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{class_table_a86afff3183afd9ad94e98fd9e7520224}{size}} () const
+\begin{DoxyCompactList}\small\item\em A getter for the size of the rows. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_table_a81e4a761f68712abcb9d4ab36245602f}{add\+Column}} (const \mbox{\hyperlink{struct_data_column}{Data\+Column}} \&)
+\begin{DoxyCompactList}\small\item\em Adds the given \doxylink{struct_data_column}{Data\+Column} to the table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_table_ad7f935a375369855c3c87a8c99f0ff14}{add\+Row}} (const \mbox{\hyperlink{class_data_row}{Data\+Row}} \&)
+\begin{DoxyCompactList}\small\item\em Adds the given \doxylink{class_data_row}{Data\+Row} to the table. \end{DoxyCompactList}\item 
+\Hypertarget{class_table_a5c1a5a413b89f26ea02734f4c7c172ea}\label{class_table_a5c1a5a413b89f26ea02734f4c7c172ea} 
+void {\bfseries set\+PK} (const \mbox{\hyperlink{struct_data_column}{Data\+Column}} \&)
+\begin{DoxyCompactList}\small\item\em A setter for the primary key of the table. \end{DoxyCompactList}\item 
+\Hypertarget{class_table_a6b169547b152a705c0b0924fe65274db}\label{class_table_a6b169547b152a705c0b0924fe65274db} 
+void {\bfseries insert} (const std\+::vector$<$ std\+::string $>$ \&)
+\begin{DoxyCompactList}\small\item\em Inserts given values in the order of columns from user input of CREATE TABLE operation. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{class_table_a3ce1f1a11cf67bd3a330238d091fec52}{update}} (const std\+::vector$<$ std\+::string $>$ \&, const std\+::vector$<$ std\+::string $>$ \&, const std\+::string \&, const std\+::string \&, const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Updates the corresponding columns with their corresponding values, based on a condition ($<$column$>$ $<$operator$>$ 
+
+). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_table}{Table}} \mbox{\hyperlink{class_table_a2bc5bcf2020207bad96a54657256f9ef}{order\+By}} (const std\+::string \&, const bool \&) const
+\begin{DoxyCompactList}\small\item\em Sorting by a column in ascending order (true) or descending order (false). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_table}{Table}} \mbox{\hyperlink{class_table_a23f53c44dc446de72b4a6613fbb35627}{filter\+By}} (const std\+::string \&, const std\+::string \&, const std\+::string \&) const
+\begin{DoxyCompactList}\small\item\em Given $<$column$>$ $<$operator$>$ 
+
+, filter the rows, and return another table with them, this is a WHERE clause execution. \end{DoxyCompactList}\item 
+\Hypertarget{class_table_a963f8845a05fb113f5e4dcbdf177f30e}\label{class_table_a963f8845a05fb113f5e4dcbdf177f30e} 
+void {\bfseries print} (const std\+::vector$<$ std\+::string $>$ \&) const
+\begin{DoxyCompactList}\small\item\em Given list of identifiers, print the rows in the corresponding order (of columns). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_table_a7c337497dc7091e989489e4f67b82304}{save}} ()
+\begin{DoxyCompactList}\small\item\em A serializing function, to store table in a binary file with all it\textquotesingle{}s data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_table_a5f14d24cbc9f7eb4e7937919e4481e63}{read}} ()
+\begin{DoxyCompactList}\small\item\em A deserializing function, to read a table from a binary file. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{class_table_a935259c410aca680dab3603eb04b03b6}{count}} (const std\+::string \&) const
+\begin{DoxyCompactList}\small\item\em An aggregate function -\/ COUNT, accepts an identifier (\doxylink{struct_data_column}{Data\+Column}\textquotesingle{}s name). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_table_a1b0ac37606e2e5343f5e5f2dc22dcb2b}{min}} (const std\+::string \&) const
+\begin{DoxyCompactList}\small\item\em An aggregate function -\/ MIN, accepts an identifier (\doxylink{struct_data_column}{Data\+Column}\textquotesingle{}s name). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_table_a6d9bfc37b7733a78fad90c12a834ddd5}{max}} (const std\+::string \&) const
+\begin{DoxyCompactList}\small\item\em An aggregate function -\/ MAX, accepts an identifier (\doxylink{struct_data_column}{Data\+Column}\textquotesingle{}s name). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_table_a1f6e1290d5f23df9990a3300bf6902b6}{avg}} (const std\+::string \&) const
+\begin{DoxyCompactList}\small\item\em An aggregate function -\/ AVG, accepts an identifier (\doxylink{struct_data_column}{Data\+Column}\textquotesingle{}s name). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_table_a0e395501c21ecaa7ff5f38249660e30e}{sum}} (const std\+::string \&) const
+\begin{DoxyCompactList}\small\item\em An aggregate function -\/ SUM, accepts an identifier (\doxylink{struct_data_column}{Data\+Column}\textquotesingle{}s name). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_table_ab11ab494d3904bc8a7bf55ec21dc8c09}{create\+Index}} (const std\+::string \&) const
+\begin{DoxyCompactList}\small\item\em Creates a \doxylink{class_b_tree}{BTree} (Index tree) on the given column identifier (\doxylink{struct_data_column}{Data\+Column} name) and saves it in a separate file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_table_a9be61e95164749ad9ba39957ce4a9323}\label{class_table_a9be61e95164749ad9ba39957ce4a9323} 
+\mbox{\hyperlink{classstd_1_1basic__ostream}{std\+::ostream}} \& {\bfseries operator$<$$<$} (\mbox{\hyperlink{classstd_1_1basic__ostream}{std\+::ostream}} \&, const \mbox{\hyperlink{class_table}{Table}} \&)
+\begin{DoxyCompactList}\small\item\em A friendly operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} overload to output a table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class table represents a set of Data\+Columns and Data\+Rows. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_table_a049f2e06391781ae255c6698869c4ad1}\label{class_table_a049f2e06391781ae255c6698869c4ad1} 
+\index{Table@{Table}!Table@{Table}}
+\index{Table@{Table}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{Table()}{Table()}}
+{\footnotesize\ttfamily Table\+::\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A default constructor. 
+
+For anonymous tables. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_table_a81e4a761f68712abcb9d4ab36245602f}\label{class_table_a81e4a761f68712abcb9d4ab36245602f} 
+\index{Table@{Table}!addColumn@{addColumn}}
+\index{addColumn@{addColumn}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{addColumn()}{addColumn()}}
+{\footnotesize\ttfamily void Table\+::add\+Column (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_data_column}{Data\+Column}} \&}]{col }\end{DoxyParamCaption})}
+
+
+
+Adds the given \doxylink{struct_data_column}{Data\+Column} to the table. 
+
+If a column with the same name exists it will throw an error. \Hypertarget{class_table_ad7f935a375369855c3c87a8c99f0ff14}\label{class_table_ad7f935a375369855c3c87a8c99f0ff14} 
+\index{Table@{Table}!addRow@{addRow}}
+\index{addRow@{addRow}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{addRow()}{addRow()}}
+{\footnotesize\ttfamily void Table\+::add\+Row (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_data_row}{Data\+Row}} \&}]{row }\end{DoxyParamCaption})}
+
+
+
+Adds the given \doxylink{class_data_row}{Data\+Row} to the table. 
+
+If it breaks the uniqueness of the primary key of the table, it throws exception. \Hypertarget{class_table_a1f6e1290d5f23df9990a3300bf6902b6}\label{class_table_a1f6e1290d5f23df9990a3300bf6902b6} 
+\index{Table@{Table}!avg@{avg}}
+\index{avg@{avg}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{avg()}{avg()}}
+{\footnotesize\ttfamily double Table\+::avg (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{col }\end{DoxyParamCaption}) const}
+
+
+
+An aggregate function -\/ AVG, accepts an identifier (\doxylink{struct_data_column}{Data\+Column}\textquotesingle{}s name). 
+
+Throws exception if the column doesn\textquotesingle{}t exist, or it\textquotesingle{}s type is not Double or Int.
+
+\begin{DoxyReturn}{Returns}
+Returns the average value of all fields in the given column.
+\end{DoxyReturn}
+\Hypertarget{class_table_a935259c410aca680dab3603eb04b03b6}\label{class_table_a935259c410aca680dab3603eb04b03b6} 
+\index{Table@{Table}!count@{count}}
+\index{count@{count}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Table\+::count (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{col }\end{DoxyParamCaption}) const}
+
+
+
+An aggregate function -\/ COUNT, accepts an identifier (\doxylink{struct_data_column}{Data\+Column}\textquotesingle{}s name). 
+
+The \texorpdfstring{$\ast$}{*} identifier is valid for this function as well. Throws exception if the column doesn\textquotesingle{}t exist.
+
+\begin{DoxyReturn}{Returns}
+Returns the amount of rows in the table.
+\end{DoxyReturn}
+\Hypertarget{class_table_ab11ab494d3904bc8a7bf55ec21dc8c09}\label{class_table_ab11ab494d3904bc8a7bf55ec21dc8c09} 
+\index{Table@{Table}!createIndex@{createIndex}}
+\index{createIndex@{createIndex}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{createIndex()}{createIndex()}}
+{\footnotesize\ttfamily void Table\+::create\+Index (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{col }\end{DoxyParamCaption}) const}
+
+
+
+Creates a \doxylink{class_b_tree}{BTree} (Index tree) on the given column identifier (\doxylink{struct_data_column}{Data\+Column} name) and saves it in a separate file. 
+
+The file in which the index tree is stored is labeled name\+\_\+column\+Name.\+bin
+
+Throws exception if column doesn\textquotesingle{}t exist. \Hypertarget{class_table_a23f53c44dc446de72b4a6613fbb35627}\label{class_table_a23f53c44dc446de72b4a6613fbb35627} 
+\index{Table@{Table}!filterBy@{filterBy}}
+\index{filterBy@{filterBy}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{filterBy()}{filterBy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_table}{Table}} Table\+::filter\+By (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{col,  }\item[{const std\+::string \&}]{op,  }\item[{const std\+::string \&}]{value }\end{DoxyParamCaption}) const}
+
+
+
+Given $<$column$>$ $<$operator$>$ 
+
+, filter the rows, and return another table with them, this is a WHERE clause execution. 
+
+column
+
+operator
+
+value
+
+\begin{DoxyReturn}{Returns}
+The filtered table.
+\end{DoxyReturn}
+\Hypertarget{class_table_a6d9bfc37b7733a78fad90c12a834ddd5}\label{class_table_a6d9bfc37b7733a78fad90c12a834ddd5} 
+\index{Table@{Table}!max@{max}}
+\index{max@{max}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{max()}{max()}}
+{\footnotesize\ttfamily double Table\+::max (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{col }\end{DoxyParamCaption}) const}
+
+
+
+An aggregate function -\/ MAX, accepts an identifier (\doxylink{struct_data_column}{Data\+Column}\textquotesingle{}s name). 
+
+Throws exception if the column doesn\textquotesingle{}t exist.
+
+\begin{DoxyReturn}{Returns}
+Returns the biggest element from the given column.
+\end{DoxyReturn}
+\Hypertarget{class_table_a1b0ac37606e2e5343f5e5f2dc22dcb2b}\label{class_table_a1b0ac37606e2e5343f5e5f2dc22dcb2b} 
+\index{Table@{Table}!min@{min}}
+\index{min@{min}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{min()}{min()}}
+{\footnotesize\ttfamily double Table\+::min (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{col }\end{DoxyParamCaption}) const}
+
+
+
+An aggregate function -\/ MIN, accepts an identifier (\doxylink{struct_data_column}{Data\+Column}\textquotesingle{}s name). 
+
+Throws exception if the column doesn\textquotesingle{}t exist.
+
+\begin{DoxyReturn}{Returns}
+Returns the smallest element from the given column.
+\end{DoxyReturn}
+\Hypertarget{class_table_a2bc5bcf2020207bad96a54657256f9ef}\label{class_table_a2bc5bcf2020207bad96a54657256f9ef} 
+\index{Table@{Table}!orderBy@{orderBy}}
+\index{orderBy@{orderBy}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{orderBy()}{orderBy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_table}{Table}} Table\+::order\+By (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{col,  }\item[{const bool \&}]{asc }\end{DoxyParamCaption}) const}
+
+
+
+Sorting by a column in ascending order (true) or descending order (false). 
+
+An index may be used, if the user created any.
+
+\begin{DoxyReturn}{Returns}
+The sorted table
+\end{DoxyReturn}
+\Hypertarget{class_table_a5f14d24cbc9f7eb4e7937919e4481e63}\label{class_table_a5f14d24cbc9f7eb4e7937919e4481e63} 
+\index{Table@{Table}!read@{read}}
+\index{read@{read}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void Table\+::read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A deserializing function, to read a table from a binary file. 
+
+The table will be read from name.\+bin. \Hypertarget{class_table_a7c337497dc7091e989489e4f67b82304}\label{class_table_a7c337497dc7091e989489e4f67b82304} 
+\index{Table@{Table}!save@{save}}
+\index{save@{save}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily void Table\+::save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A serializing function, to store table in a binary file with all it\textquotesingle{}s data. 
+
+The table will be saved in name.\+bin. \Hypertarget{class_table_a86afff3183afd9ad94e98fd9e7520224}\label{class_table_a86afff3183afd9ad94e98fd9e7520224} 
+\index{Table@{Table}!size@{size}}
+\index{size@{size}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Table\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+A getter for the size of the rows. 
+
+\begin{DoxyReturn}{Returns}
+The amount of rows in the table.
+\end{DoxyReturn}
+\Hypertarget{class_table_a0e395501c21ecaa7ff5f38249660e30e}\label{class_table_a0e395501c21ecaa7ff5f38249660e30e} 
+\index{Table@{Table}!sum@{sum}}
+\index{sum@{sum}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{sum()}{sum()}}
+{\footnotesize\ttfamily double Table\+::sum (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{col }\end{DoxyParamCaption}) const}
+
+
+
+An aggregate function -\/ SUM, accepts an identifier (\doxylink{struct_data_column}{Data\+Column}\textquotesingle{}s name). 
+
+Throws exception if the column doesn\textquotesingle{}t exist, or it\textquotesingle{}s type is not Double or Int.
+
+\begin{DoxyReturn}{Returns}
+Returns the sum of all fields in the given column.
+\end{DoxyReturn}
+\Hypertarget{class_table_a3ce1f1a11cf67bd3a330238d091fec52}\label{class_table_a3ce1f1a11cf67bd3a330238d091fec52} 
+\index{Table@{Table}!update@{update}}
+\index{update@{update}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Table\+::update (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{cols,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{values,  }\item[{const std\+::string \&}]{key,  }\item[{const std\+::string \&}]{op,  }\item[{const std\+::string \&}]{key\+Value }\end{DoxyParamCaption})}
+
+
+
+Updates the corresponding columns with their corresponding values, based on a condition ($<$column$>$ $<$operator$>$ 
+
+). 
+
+The columns we will be updating.
+
+The values to be replaced on those columns.
+
+column
+
+operator
+
+value
+
+\begin{DoxyReturn}{Returns}
+The amount of affected rows.
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+ACER/\+Desktop/school/\+FMI-\/\+CS/3 s/\+SDP/\+DBMS/\+DBMS/table.\+h\item 
+C\+:/\+Users/\+ACER/\+Desktop/school/\+FMI-\/\+CS/3 s/\+SDP/\+DBMS/\+DBMS/table.\+cpp\end{DoxyCompactItemize}

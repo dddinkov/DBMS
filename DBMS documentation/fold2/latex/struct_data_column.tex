@@ -1,0 +1,50 @@
+\doxysection{Data\+Column Struct Reference}
+\hypertarget{struct_data_column}{}\label{struct_data_column}\index{DataColumn@{DataColumn}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_data_column_ab66edd6e17057a6e54d79e21dca5f839}\label{struct_data_column_ab66edd6e17057a6e54d79e21dca5f839} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{struct_data_column}{Data\+Column}} \&other)
+\begin{DoxyCompactList}\small\item\em A \doxylink{struct_data_column}{Data\+Column} operator== overload, to check wheter their names match. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_data_column_a9d07e63e3b6ef1ae65d239a012019503}{serialize}} (std\+::fstream \&os)
+\begin{DoxyCompactList}\small\item\em A simple binary serialization method for \doxylink{struct_data_column}{Data\+Column} struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_data_column_a8956f02c17c57abf2efd93e38c3f7461}{deserialize}} (std\+::fstream \&istr)
+\begin{DoxyCompactList}\small\item\em A simple binary deserialization method for \doxylink{struct_data_column}{Data\+Column} struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_data_column_aa6af5ec6409713f92dc75eaa51786b7e}\label{struct_data_column_aa6af5ec6409713f92dc75eaa51786b7e} 
+std\+::string {\bfseries name}
+\begin{DoxyCompactList}\small\item\em A public field specifying the name of the column. \end{DoxyCompactList}\item 
+\Hypertarget{struct_data_column_abcb2888c500fd21e0105ca907958a931}\label{struct_data_column_abcb2888c500fd21e0105ca907958a931} 
+Type {\bfseries type}
+\begin{DoxyCompactList}\small\item\em A public field specifying the type of the column\textquotesingle{}s fields. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_data_column_a8956f02c17c57abf2efd93e38c3f7461}\label{struct_data_column_a8956f02c17c57abf2efd93e38c3f7461} 
+\index{DataColumn@{DataColumn}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!DataColumn@{DataColumn}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily void Data\+Column\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::fstream \&}]{istr }\end{DoxyParamCaption})}
+
+
+
+A simple binary deserialization method for \doxylink{struct_data_column}{Data\+Column} struct. 
+
+It takes a reference of type fstream and won\textquotesingle{}t be closing it afterwards. \Hypertarget{struct_data_column_a9d07e63e3b6ef1ae65d239a012019503}\label{struct_data_column_a9d07e63e3b6ef1ae65d239a012019503} 
+\index{DataColumn@{DataColumn}!serialize@{serialize}}
+\index{serialize@{serialize}!DataColumn@{DataColumn}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily void Data\+Column\+::serialize (\begin{DoxyParamCaption}\item[{std\+::fstream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+A simple binary serialization method for \doxylink{struct_data_column}{Data\+Column} struct. 
+
+It takes a reference of type fstream and won\textquotesingle{}t be closing it afterwards. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+ACER/\+Desktop/school/\+FMI-\/\+CS/3 s/\+SDP/\+DBMS/\+DBMS/data\+Column.\+h\item 
+C\+:/\+Users/\+ACER/\+Desktop/school/\+FMI-\/\+CS/3 s/\+SDP/\+DBMS/\+DBMS/data\+Column.\+cpp\end{DoxyCompactItemize}

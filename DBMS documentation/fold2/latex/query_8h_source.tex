@@ -1,0 +1,44 @@
+\doxysection{query.\+h}
+\hypertarget{query_8h_source}{}\label{query_8h_source}\index{C:/Users/ACER/Desktop/school/FMI-\/CS/3 s/SDP/DBMS/DBMS/query.h@{C:/Users/ACER/Desktop/school/FMI-\/CS/3 s/SDP/DBMS/DBMS/query.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}operation.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}queryArguments.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}whereClauses.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}orderByClause.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_query}{Query}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_operation}{Operation}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_query_arguments}{QueryArguments}}*\ queryArguments;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00025\ \ \ \ \ std::string\ table;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{struct_where_clauses}{WhereClauses}}\ whereClauses;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{struct_order_by_clause}{OrderByClause}}\ orderByClause;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ copy(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_query}{Query}}\&);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ deallocate();}
+\DoxyCodeLine{00046\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_query_a4c1633236bdb9fa8d3fd3572a469889d}{Query}}();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{class_query_a4c1633236bdb9fa8d3fd3572a469889d}{Query}}(\mbox{\hyperlink{class_query_arguments}{QueryArguments}}*,\ \textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_where_clauses}{WhereClauses}}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_order_by_clause}{OrderByClause}}\&);}
+\DoxyCodeLine{00056\ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{class_query_a4c1633236bdb9fa8d3fd3572a469889d}{Query}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_query}{Query}}\&);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{class_query}{Query}}\&\ \mbox{\hyperlink{class_query_a04d71e7714f4537267517fab93e3eb79}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_query}{Query}}\&);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_query_a3941a135faddb850189054d02200a745}{eval}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{class_operation}{Operation}}*\ \mbox{\hyperlink{class_query_ac0582f91174a9f1a67b2d38782c7fcc2}{clone}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{classstd_1_1basic__istream}{std::istream}}\&\ \mbox{\hyperlink{class_query_a9d9ddf17bcad6509b840b9732a573db2}{operator>>}}(\mbox{\hyperlink{classstd_1_1basic__istream}{std::istream}}\&,\ \mbox{\hyperlink{class_query}{Query}}*\&);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{class_query_aad0c964335e9809cc7e22af34e9e8410}{\string~Query}}();}
+\DoxyCodeLine{00086\ \};}
+
+\end{DoxyCode}

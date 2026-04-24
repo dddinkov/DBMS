@@ -35,7 +35,7 @@ void Aggregates::print(const Table& table) const
 		}
 		else
 		{
-			throw "How did I print out ?"; // this must be unreachable, but just in case...
+			throw std::runtime_error("How did I print out ?"); // this must be unreachable, but just in case...
 		}
 
 		if (i != aggregates.size() - 1)
@@ -70,7 +70,19 @@ std::istream& operator>>(std::istream& istr, Aggregates*& agg)
 		(token.value == "MIN" || token.value == "MAX" || token.value == "AVG" || token.value == "SUM" || token.value == "COUNT"))
 	{
 		Aggregate toPush;
-		istr >> toPush;
+		try
+		{
+			istr >> toPush;
+		}
+		catch (std::exception e)
+		{
+			delete agg;
+			agg = nullptr;
+
+			throw e;
+
+			return istr;
+		}
 		agg->aggregates.push_back(toPush);
 		tokenizer.getNextToken();
 
@@ -83,6 +95,9 @@ std::istream& operator>>(std::istream& istr, Aggregates*& agg)
 			if (token.type != Tokenizer::KEYWORD ||
 				(token.value != "MIN" && token.value != "MAX" && token.value != "AVG" && token.value != "SUM" && token.value != "COUNT"))
 			{
+				delete agg;
+				agg = nullptr;
+
 				std::string message = "Unexpected token: " + token.value + ".\nExpected: AGGREGATE";
 				throw std::invalid_argument(message);
 			}

@@ -1,0 +1,72 @@
+\doxysection{table.\+h}
+\hypertarget{table_8h_source}{}\label{table_8h_source}\index{C:/Users/ACER/Desktop/school/FMI-\/CS/3 s/SDP/DBMS/DBMS/table.h@{C:/Users/ACER/Desktop/school/FMI-\/CS/3 s/SDP/DBMS/DBMS/table.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}dataColumn.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}dataRow.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <ostream>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_table}{Table}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00025\ \ \ \ \ std::vector<DataColumn>\ columns;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ \ \ \ \ std::vector<DataRow>\ rows;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{struct_data_column}{DataColumn}}\ primary\_key;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ check\_key(\textcolor{keyword}{const}\ std::string\&);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{struct_data_column}{DataColumn}}\ getCol(\textcolor{keyword}{const}\ std::string\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00052\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{class_table_a049f2e06391781ae255c6698869c4ad1}{Table}}();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{class_table_a049f2e06391781ae255c6698869c4ad1}{Table}}(\textcolor{keyword}{const}\ std::string\&);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00069\ \ \ \ \ std::size\_t\ \mbox{\hyperlink{class_table_a86afff3183afd9ad94e98fd9e7520224}{size}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_table_a81e4a761f68712abcb9d4ab36245602f}{addColumn}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_data_column}{DataColumn}}\&);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_table_ad7f935a375369855c3c87a8c99f0ff14}{addRow}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_data_row}{DataRow}}\&);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_table_a5c1a5a413b89f26ea02734f4c7c172ea}{setPK}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_data_column}{DataColumn}}\&);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_table_a6b169547b152a705c0b0924fe65274db}{insert}}(\textcolor{keyword}{const}\ std::vector<std::string>\&);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{comment}{//\ Updates\ the\ corresponding\ columns\ with\ their\ corresponding\ values,\ based\ on\ a\ condition\ (<column>\ <operator>\ <value>).}}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{comment}{//\ Also\ returns\ the\ amount\ of\ affected\ rows.}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00107\ \ \ \ \ std::size\_t\ \mbox{\hyperlink{class_table_a3ce1f1a11cf67bd3a330238d091fec52}{update}}(\textcolor{keyword}{const}\ std::vector<std::string>\&,\ \textcolor{keyword}{const}\ std::vector<std::string>\&,\ \textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ std::string\&);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{class_table}{Table}}\ \mbox{\hyperlink{class_table_a2bc5bcf2020207bad96a54657256f9ef}{orderBy}}(\textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{class_table}{Table}}\ \mbox{\hyperlink{class_table_a23f53c44dc446de72b4a6613fbb35627}{filterBy}}(\textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ std::string\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_table_a963f8845a05fb113f5e4dcbdf177f30e}{print}}(\textcolor{keyword}{const}\ std::vector<std::string>\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_table_a7c337497dc7091e989489e4f67b82304}{save}}();}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_table_a5f14d24cbc9f7eb4e7937919e4481e63}{read}}();}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00152\ \ \ \ \ std::size\_t\ \mbox{\hyperlink{class_table_a935259c410aca680dab3603eb04b03b6}{count}}(\textcolor{keyword}{const}\ std::string\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_table_a1b0ac37606e2e5343f5e5f2dc22dcb2b}{min}}(\textcolor{keyword}{const}\ std::string\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_table_a6d9bfc37b7733a78fad90c12a834ddd5}{max}}(\textcolor{keyword}{const}\ std::string\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_table_a1f6e1290d5f23df9990a3300bf6902b6}{avg}}(\textcolor{keyword}{const}\ std::string\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_table_a0e395501c21ecaa7ff5f38249660e30e}{sum}}(\textcolor{keyword}{const}\ std::string\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_table_ab11ab494d3904bc8a7bf55ec21dc8c09}{createIndex}}(\textcolor{keyword}{const}\ std::string\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{classstd_1_1basic__ostream}{std::ostream}}\&\ \mbox{\hyperlink{class_table_a9be61e95164749ad9ba39957ce4a9323}{operator<<}}(\mbox{\hyperlink{classstd_1_1basic__ostream}{std::ostream}}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_table}{Table}}\&);}
+\DoxyCodeLine{00199\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,95 @@
+\doxysection{Data\+Row Class Reference}
+\hypertarget{class_data_row}{}\label{class_data_row}\index{DataRow@{DataRow}}
+
+
+\doxylink{class_data_row}{Data\+Row} class to store a record in a table.  
+
+
+
+
+{\ttfamily \#include $<$data\+Row.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_data_row_aa1709e8bc93c7be80e6cf80d2e06424e}{Data\+Row}} ()
+\begin{DoxyCompactList}\small\item\em A default constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_data_row_a6bb22bdeed24a518d1f929a30f0a6a40}\label{class_data_row_a6bb22bdeed24a518d1f929a30f0a6a40} 
+void {\bfseries add} (const \mbox{\hyperlink{struct_data_column}{Data\+Column}} \&, const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Adds a new field to the record, if it\textquotesingle{}s valid. \end{DoxyCompactList}\item 
+\Hypertarget{class_data_row_a63895d5d97f90cb6a5bd6cf34855cbb8}\label{class_data_row_a63895d5d97f90cb6a5bd6cf34855cbb8} 
+void {\bfseries update} (const \mbox{\hyperlink{struct_data_column}{Data\+Column}} \&, const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Updates a field in record, if it\textquotesingle{}s valid. \end{DoxyCompactList}\item 
+\Hypertarget{class_data_row_a9e37962b60b8114b3d01420de745a013}\label{class_data_row_a9e37962b60b8114b3d01420de745a013} 
+std\+::string {\bfseries operator\mbox{[}$\,$\mbox{]}} (const \mbox{\hyperlink{struct_data_column}{Data\+Column}} \&) const
+\begin{DoxyCompactList}\small\item\em Operator\mbox{[}\mbox{]} overload for class \doxylink{class_data_row}{Data\+Row} to access record field\textquotesingle{}s elements (readonly). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_row_ac142b2181c281c64847a3407ece4043c}{serialize}} (std\+::fstream \&)
+\begin{DoxyCompactList}\small\item\em A simple binary serialization method for class \doxylink{class_data_row}{Data\+Row}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_row_aaaa92f97075fe8a2c57fbc7959d480ef}{deserialize}} (std\+::fstream \&)
+\begin{DoxyCompactList}\small\item\em A simple binary deserialization method for class \doxylink{class_data_row}{Data\+Row}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_data_row_ab1f92958c6898e4f56725ce1b92e6561}{compare}} (const \mbox{\hyperlink{struct_data_column}{Data\+Column}} \&, const \mbox{\hyperlink{class_data_row}{Data\+Row}} \&)
+\begin{DoxyCompactList}\small\item\em A function to compare the given row with another, given a \doxylink{struct_data_column}{Data\+Column} object as a key. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_data_row_ada747dcb7bd872b82acdbfb8ff97e2a4}\label{class_data_row_ada747dcb7bd872b82acdbfb8ff97e2a4} 
+\mbox{\hyperlink{classstd_1_1basic__ostream}{std\+::ostream}} \& {\bfseries operator$<$$<$} (\mbox{\hyperlink{classstd_1_1basic__ostream}{std\+::ostream}} \&, const \mbox{\hyperlink{class_data_row}{Data\+Row}} \&)
+\begin{DoxyCompactList}\small\item\em A friendly operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} overload for outputting a \doxylink{class_data_row}{Data\+Row}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_data_row}{Data\+Row} class to store a record in a table. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_data_row_aa1709e8bc93c7be80e6cf80d2e06424e}\label{class_data_row_aa1709e8bc93c7be80e6cf80d2e06424e} 
+\index{DataRow@{DataRow}!DataRow@{DataRow}}
+\index{DataRow@{DataRow}!DataRow@{DataRow}}
+\doxysubsubsection{\texorpdfstring{DataRow()}{DataRow()}}
+{\footnotesize\ttfamily Data\+Row\+::\+Data\+Row (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A default constructor. 
+
+Literally does nothing. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_data_row_ab1f92958c6898e4f56725ce1b92e6561}\label{class_data_row_ab1f92958c6898e4f56725ce1b92e6561} 
+\index{DataRow@{DataRow}!compare@{compare}}
+\index{compare@{compare}!DataRow@{DataRow}}
+\doxysubsubsection{\texorpdfstring{compare()}{compare()}}
+{\footnotesize\ttfamily int Data\+Row\+::compare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_data_column}{Data\+Column}} \&}]{col,  }\item[{const \mbox{\hyperlink{class_data_row}{Data\+Row}} \&}]{row }\end{DoxyParamCaption})}
+
+
+
+A function to compare the given row with another, given a \doxylink{struct_data_column}{Data\+Column} object as a key. 
+
+\begin{DoxyReturn}{Returns}
+0 if the values are equal, 1 if this row\textquotesingle{}s value \texorpdfstring{$>$}{>} the other row\textquotesingle{}s value, and -\/1 if this row\textquotesingle{}s value \texorpdfstring{$<$}{<} the other row\textquotesingle{}s value
+\end{DoxyReturn}
+\Hypertarget{class_data_row_aaaa92f97075fe8a2c57fbc7959d480ef}\label{class_data_row_aaaa92f97075fe8a2c57fbc7959d480ef} 
+\index{DataRow@{DataRow}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!DataRow@{DataRow}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily void Data\+Row\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::fstream \&}]{istr }\end{DoxyParamCaption})}
+
+
+
+A simple binary deserialization method for class \doxylink{class_data_row}{Data\+Row}. 
+
+It takes a reference of type fstream and won\textquotesingle{}t be closing it afterwards. \Hypertarget{class_data_row_ac142b2181c281c64847a3407ece4043c}\label{class_data_row_ac142b2181c281c64847a3407ece4043c} 
+\index{DataRow@{DataRow}!serialize@{serialize}}
+\index{serialize@{serialize}!DataRow@{DataRow}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily void Data\+Row\+::serialize (\begin{DoxyParamCaption}\item[{std\+::fstream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+A simple binary serialization method for class \doxylink{class_data_row}{Data\+Row}. 
+
+It takes a reference of type fstream and won\textquotesingle{}t be closing it afterwards. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+ACER/\+Desktop/school/\+FMI-\/\+CS/3 s/\+SDP/\+DBMS/\+DBMS/data\+Row.\+h\item 
+C\+:/\+Users/\+ACER/\+Desktop/school/\+FMI-\/\+CS/3 s/\+SDP/\+DBMS/\+DBMS/data\+Row.\+cpp\end{DoxyCompactItemize}

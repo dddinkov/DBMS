@@ -1,14 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
@@ -28,16 +20,30 @@
     <Filter Include="Parser\Tokenizer">
       <UniqueIdentifier>{3c18d572-fd41-401f-9c79-82fb79c49a69}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{e240fefb-a63a-4397-8dd8-fdf2a63072ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Table\Source Files">
+      <UniqueIdentifier>{674abf4d-5fb0-4a39-ae60-d5caac546d4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Table\Header Files">
+      <UniqueIdentifier>{ad0be566-b6f0-44da-851d-0341ad231b05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{147fab77-1d2e-49c6-b24e-d45cf543dbf0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Main\Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DBMS.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="table.cpp">
-      <Filter>Table</Filter>
-    </ClCompile>
-    <ClCompile Include="dataRow.cpp">
-      <Filter>Table</Filter>
+      <Filter>Main\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="insertInto.h">
       <Filter>Parser\Header Files</Filter>
@@ -99,19 +105,34 @@
     <ClCompile Include="queryArguments.cpp">
       <Filter>Parser\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="btree.cpp">
+      <Filter>Main\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Unit tests\tableTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="Unit tests\btreeTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="dataRow.cpp">
+      <Filter>Table\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dataColumn.cpp">
+      <Filter>Table\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="table.cpp">
+      <Filter>Table\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Unit tests\operationTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="Unit tests\tokenizerTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doctest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="dataColumn.h">
-      <Filter>Table</Filter>
-    </ClInclude>
-    <ClInclude Include="dataRow.h">
-      <Filter>Table</Filter>
-    </ClInclude>
-    <ClInclude Include="table.h">
-      <Filter>Table</Filter>
+      <Filter>Main\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="createIndex.h">
       <Filter>Parser\Header Files</Filter>
@@ -166,6 +187,18 @@
     </ClInclude>
     <ClInclude Include="queryArguments.h">
       <Filter>Parser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="btree.h">
+      <Filter>Main\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dataColumn.h">
+      <Filter>Table\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dataRow.h">
+      <Filter>Table\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="table.h">
+      <Filter>Table\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

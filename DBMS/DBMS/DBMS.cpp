@@ -1,35 +1,62 @@
 ﻿// DBMS.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
 
+#define DOCTEST_CONFIG_IMPLEMENT
+#include "doctest.h"
+#include "operation.h"
+#include "table.h"
 #include <iostream>
 #include <sstream>
-#include "operation.h"
+#include <exception>
+#include <Windows.h>
 
-int main()
+// Simple prompt mode recursive function
+void prompt()
 {
-    std::istringstream str("SELECT * FROM polpo ORDER BY Name DESC;");
+    std::string input;
 
-    Operation* opr = nullptr;
+    std::getline(std::cin, input);
 
-    try 
+    if (input == "QUIT;")
     {
-        str >> opr;
+        std::cout << "Exitting. Good bye!" << std::endl;
+        return;
+    }
+    
+    try
+    {
+        std::stringstream stream(input);
 
-        opr->eval();
+        Operation* op;
 
-        if (opr != nullptr)
+        stream >> op;
+
+        if (op != nullptr)
         {
-            delete opr;
-        }
+            op->eval();
 
-        /*Table temp("polpo");
-        temp.read();
-        std::cout << temp;*/
+            delete op;
+        }
+        else
+        {
+            throw std::runtime_error("Something went wrong!");
+        }
     }
     catch (std::exception e)
     {
-        std::cout << e.what();
+        std::cout << e.what() << std::endl;
     }
+
+    prompt();
+}
+
+int main()
+{
+    doctest::Context context;
+    context.run();
+
+    SetConsoleOutputCP(1251);
+    SetConsoleCP(1251);
+    prompt();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

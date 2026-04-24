@@ -1,0 +1,74 @@
+\doxysection{Query\+Arguments Class Reference}
+\hypertarget{class_query_arguments}{}\label{class_query_arguments}\index{QueryArguments@{QueryArguments}}
+
+
+Abstract class Query\+Argumets.  
+
+
+
+
+{\ttfamily \#include $<$query\+Arguments.\+h$>$}
+
+Inheritance diagram for Query\+Arguments\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_query_arguments}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_query_arguments_a0cf5e28a8b785d17884b1fba10cdde41}{print}} (const \mbox{\hyperlink{class_table}{Table}} \&) const =0
+\begin{DoxyCompactList}\small\item\em Pure virtual print function to display the columns/aggregate values (query arguments). \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_query_arguments}{Query\+Arguments}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_query_arguments_a98915ebf4041137ea71b9250056717bc}{clone}} () const =0
+\begin{DoxyCompactList}\small\item\em A clone function. \end{DoxyCompactList}\item 
+\Hypertarget{class_query_arguments_a61ac36dc4fb108cabbca0c8e2234aeff}\label{class_query_arguments_a61ac36dc4fb108cabbca0c8e2234aeff} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Query\+Arguments} ()=default
+\begin{DoxyCompactList}\small\item\em A default destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_query_arguments_ad0053687ba60a1c512cc9d38f6b720ef}\label{class_query_arguments_ad0053687ba60a1c512cc9d38f6b720ef} 
+\mbox{\hyperlink{classstd_1_1basic__istream}{std\+::istream}} \& {\bfseries operator$>$$>$} (\mbox{\hyperlink{classstd_1_1basic__istream}{std\+::istream}} \&, \mbox{\hyperlink{class_query_arguments}{Query\+Arguments}} \texorpdfstring{$\ast$}{*}\&)
+\begin{DoxyCompactList}\small\item\em operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} overload for inputting \doxylink{class_query_arguments}{Query\+Arguments}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract class Query\+Argumets. 
+
+Following the following grammar rule\+: QUERY\+\_\+\+ARGUMENTS = COLUMNS \texorpdfstring{$\vert$}{|} AGGREGATES 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_query_arguments_a98915ebf4041137ea71b9250056717bc}\label{class_query_arguments_a98915ebf4041137ea71b9250056717bc} 
+\index{QueryArguments@{QueryArguments}!clone@{clone}}
+\index{clone@{clone}!QueryArguments@{QueryArguments}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_query_arguments}{Query\+Arguments}} \texorpdfstring{$\ast$}{*} Query\+Arguments\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+A clone function. 
+
+
+
+Implemented in \mbox{\hyperlink{class_aggregates_a6f3a35b7d4dca942c5c4e1b65d9c6d2d}{Aggregates}}, and \mbox{\hyperlink{class_columns_a50896cca0264c1d0c15ef6250e2a111d}{Columns}}.
+
+\Hypertarget{class_query_arguments_a0cf5e28a8b785d17884b1fba10cdde41}\label{class_query_arguments_a0cf5e28a8b785d17884b1fba10cdde41} 
+\index{QueryArguments@{QueryArguments}!print@{print}}
+\index{print@{print}!QueryArguments@{QueryArguments}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily virtual void Query\+Arguments\+::print (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_table}{Table}} \&}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual print function to display the columns/aggregate values (query arguments). 
+
+A \doxylink{class_table}{Table}
+
+Implemented in \mbox{\hyperlink{class_aggregates_aa5e80586dc7a31ade57bb387dde3cc7a}{Aggregates}}, and \mbox{\hyperlink{class_columns_a13522c2214f00bdac064885477812bb2}{Columns}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+ACER/\+Desktop/school/\+FMI-\/\+CS/3 s/\+SDP/\+DBMS/\+DBMS/query\+Arguments.\+h\end{DoxyCompactItemize}

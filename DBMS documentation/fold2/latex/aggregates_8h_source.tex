@@ -1,0 +1,27 @@
+\doxysection{aggregates.\+h}
+\hypertarget{aggregates_8h_source}{}\label{aggregates_8h_source}\index{C:/Users/ACER/Desktop/school/FMI-\/CS/3 s/SDP/DBMS/DBMS/aggregates.h@{C:/Users/ACER/Desktop/school/FMI-\/CS/3 s/SDP/DBMS/DBMS/aggregates.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}queryArguments.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}aggregate.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_aggregates}{Aggregates}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_query_arguments}{QueryArguments}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ std::vector<Aggregate>\ aggregates;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_aggregates_af6427d4c628ec80dc15377976e7ed7fa}{Aggregates}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_aggregates_af6427d4c628ec80dc15377976e7ed7fa}{Aggregates}}(\textcolor{keyword}{const}\ std::vector<Aggregate>\&);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_aggregates_aa5e80586dc7a31ade57bb387dde3cc7a}{print}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_table}{Table}}\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_query_arguments}{QueryArguments}}*\ \mbox{\hyperlink{class_aggregates_a6f3a35b7d4dca942c5c4e1b65d9c6d2d}{clone}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{classstd_1_1basic__istream}{std::istream}}\&\ \mbox{\hyperlink{class_aggregates_ad05fa8c1e69311d2b0077ced3428f364}{operator>>}}(\mbox{\hyperlink{classstd_1_1basic__istream}{std::istream}}\&,\ \mbox{\hyperlink{class_aggregates}{Aggregates}}*\&);}
+\DoxyCodeLine{00046\ \};}
+
+\end{DoxyCode}

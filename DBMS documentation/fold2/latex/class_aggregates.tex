@@ -1,0 +1,83 @@
+\doxysection{Aggregates Class Reference}
+\hypertarget{class_aggregates}{}\label{class_aggregates}\index{Aggregates@{Aggregates}}
+
+
+Class \doxylink{class_aggregates}{Aggregates}, inherits from \doxylink{class_query_arguments}{Query\+Arguments}.  
+
+
+
+
+{\ttfamily \#include $<$aggregates.\+h$>$}
+
+Inheritance diagram for Aggregates\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_aggregates}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_aggregates_af6427d4c628ec80dc15377976e7ed7fa}\label{class_aggregates_af6427d4c628ec80dc15377976e7ed7fa} 
+{\bfseries Aggregates} ()
+\begin{DoxyCompactList}\small\item\em A default constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_aggregates_a3eef279e2c36789fc8ee475d678bb4b9}\label{class_aggregates_a3eef279e2c36789fc8ee475d678bb4b9} 
+{\bfseries Aggregates} (const std\+::vector$<$ \mbox{\hyperlink{struct_aggregate}{Aggregate}} $>$ \&)
+\begin{DoxyCompactList}\small\item\em A parameterized constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_aggregates_aa5e80586dc7a31ade57bb387dde3cc7a}{print}} (const \mbox{\hyperlink{class_table}{Table}} \&) const
+\begin{DoxyCompactList}\small\item\em A print function (overriden) to display the aggregates. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_query_arguments}{Query\+Arguments}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_aggregates_a6f3a35b7d4dca942c5c4e1b65d9c6d2d}{clone}} () const
+\begin{DoxyCompactList}\small\item\em A clone function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_query_arguments}{Query\+Arguments}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Query\+Arguments} ()=default
+\begin{DoxyCompactList}\small\item\em A default destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_aggregates_ad05fa8c1e69311d2b0077ced3428f364}\label{class_aggregates_ad05fa8c1e69311d2b0077ced3428f364} 
+\mbox{\hyperlink{classstd_1_1basic__istream}{std\+::istream}} \& {\bfseries operator$>$$>$} (\mbox{\hyperlink{classstd_1_1basic__istream}{std\+::istream}} \&, \mbox{\hyperlink{class_aggregates}{Aggregates}} \texorpdfstring{$\ast$}{*}\&)
+\begin{DoxyCompactList}\small\item\em operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} overload for inputting \doxylink{class_aggregates}{Aggregates}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class \doxylink{class_aggregates}{Aggregates}, inherits from \doxylink{class_query_arguments}{Query\+Arguments}. 
+
+Following the following rule from the grammar\+: AGGREGATES = AGGREGATE \mbox{[}, AGGREGATES\mbox{]} 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_aggregates_a6f3a35b7d4dca942c5c4e1b65d9c6d2d}\label{class_aggregates_a6f3a35b7d4dca942c5c4e1b65d9c6d2d} 
+\index{Aggregates@{Aggregates}!clone@{clone}}
+\index{clone@{clone}!Aggregates@{Aggregates}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_query_arguments}{Query\+Arguments}} \texorpdfstring{$\ast$}{*} Aggregates\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+A clone function. 
+
+
+
+Implements \mbox{\hyperlink{class_query_arguments_a98915ebf4041137ea71b9250056717bc}{Query\+Arguments}}.
+
+\Hypertarget{class_aggregates_aa5e80586dc7a31ade57bb387dde3cc7a}\label{class_aggregates_aa5e80586dc7a31ade57bb387dde3cc7a} 
+\index{Aggregates@{Aggregates}!print@{print}}
+\index{print@{print}!Aggregates@{Aggregates}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Aggregates\+::print (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_table}{Table}} \&}]{table }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+A print function (overriden) to display the aggregates. 
+
+A \doxylink{class_table}{Table}
+
+Implements \mbox{\hyperlink{class_query_arguments_a0cf5e28a8b785d17884b1fba10cdde41}{Query\+Arguments}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+ACER/\+Desktop/school/\+FMI-\/\+CS/3 s/\+SDP/\+DBMS/\+DBMS/aggregates.\+h\item 
+C\+:/\+Users/\+ACER/\+Desktop/school/\+FMI-\/\+CS/3 s/\+SDP/\+DBMS/\+DBMS/aggregates.\+cpp\end{DoxyCompactItemize}

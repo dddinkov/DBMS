@@ -1,0 +1,83 @@
+\doxysection{Columns Class Reference}
+\hypertarget{class_columns}{}\label{class_columns}\index{Columns@{Columns}}
+
+
+Class \doxylink{class_columns}{Columns}, inherits from \doxylink{class_query_arguments}{Query\+Arguments}.  
+
+
+
+
+{\ttfamily \#include $<$columns.\+h$>$}
+
+Inheritance diagram for Columns\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_columns}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_columns_ae1100bad6f0af15c2d19c0435f2de26f}\label{class_columns_ae1100bad6f0af15c2d19c0435f2de26f} 
+{\bfseries Columns} ()
+\begin{DoxyCompactList}\small\item\em A default constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_columns_a657d564f5a4ad9c53b6a734f825df6be}\label{class_columns_a657d564f5a4ad9c53b6a734f825df6be} 
+{\bfseries Columns} (std\+::vector$<$ std\+::string $>$ \&)
+\begin{DoxyCompactList}\small\item\em A parameterized constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_columns_a13522c2214f00bdac064885477812bb2}{print}} (const \mbox{\hyperlink{class_table}{Table}} \&) const
+\begin{DoxyCompactList}\small\item\em A print function (overriden) to display the columns. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_query_arguments}{Query\+Arguments}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_columns_a50896cca0264c1d0c15ef6250e2a111d}{clone}} () const
+\begin{DoxyCompactList}\small\item\em A clone function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_query_arguments}{Query\+Arguments}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Query\+Arguments} ()=default
+\begin{DoxyCompactList}\small\item\em A default destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_columns_af4c090ca074d59001312fc334a8fd534}\label{class_columns_af4c090ca074d59001312fc334a8fd534} 
+\mbox{\hyperlink{classstd_1_1basic__istream}{std\+::istream}} \& {\bfseries operator$>$$>$} (\mbox{\hyperlink{classstd_1_1basic__istream}{std\+::istream}} \&, \mbox{\hyperlink{class_columns}{Columns}} \texorpdfstring{$\ast$}{*}\&)
+\begin{DoxyCompactList}\small\item\em operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} overload for inputting \doxylink{class_columns}{Columns}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class \doxylink{class_columns}{Columns}, inherits from \doxylink{class_query_arguments}{Query\+Arguments}. 
+
+Following the following rule from the grammar\+: COLUMNS = COLUMN \mbox{[}, COLUMNS\mbox{]} 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_columns_a50896cca0264c1d0c15ef6250e2a111d}\label{class_columns_a50896cca0264c1d0c15ef6250e2a111d} 
+\index{Columns@{Columns}!clone@{clone}}
+\index{clone@{clone}!Columns@{Columns}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_query_arguments}{Query\+Arguments}} \texorpdfstring{$\ast$}{*} Columns\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+A clone function. 
+
+
+
+Implements \mbox{\hyperlink{class_query_arguments_a98915ebf4041137ea71b9250056717bc}{Query\+Arguments}}.
+
+\Hypertarget{class_columns_a13522c2214f00bdac064885477812bb2}\label{class_columns_a13522c2214f00bdac064885477812bb2} 
+\index{Columns@{Columns}!print@{print}}
+\index{print@{print}!Columns@{Columns}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Columns\+::print (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_table}{Table}} \&}]{table }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+A print function (overriden) to display the columns. 
+
+A \doxylink{class_table}{Table}
+
+Implements \mbox{\hyperlink{class_query_arguments_a0cf5e28a8b785d17884b1fba10cdde41}{Query\+Arguments}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+ACER/\+Desktop/school/\+FMI-\/\+CS/3 s/\+SDP/\+DBMS/\+DBMS/columns.\+h\item 
+C\+:/\+Users/\+ACER/\+Desktop/school/\+FMI-\/\+CS/3 s/\+SDP/\+DBMS/\+DBMS/columns.\+cpp\end{DoxyCompactItemize}

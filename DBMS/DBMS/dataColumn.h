@@ -5,6 +5,12 @@
 #include <fstream>
 #include <iostream>
 
+/// <summary>
+/// Enumerates the datatypes we can use.
+/// 
+/// Types are String, Int, Double, Bool, and Null.
+/// The type Null is used to identify an error. I do not allow nullable types in this project.
+/// </summary>
 enum Type {
 	String,
 	Int,
@@ -14,52 +20,69 @@ enum Type {
 };
 
 struct DataColumn {
+	/// <summary>
+	/// A public field specifying the name of the column.
+	/// </summary>
 	std::string name;
+
+	/// <summary>
+	/// A public field specifying the type of the column's fields.
+	/// </summary>
 	Type type;
+	
+	/// <summary>
+	/// A DataColumn operator== overload, to check wheter their names match.
+	/// </summary>
+	bool operator==(const DataColumn& other);
 
-	bool operator==(const DataColumn& other)
-	{
-		return name == other.name;
-	}
+	/// <summary>
+	/// A simple binary serialization method for DataColumn struct.
+	/// 
+	/// It takes a reference of type fstream and won't be closing it afterwards.
+	/// </summary>
+	void serialize(std::fstream& os);
 
-	void serialize(std::fstream& os)
-	{
-		std::size_t nameLength = name.size();
-		os.write(reinterpret_cast<const char*>(&nameLength), sizeof(std::size_t));
-		os.write(name.c_str(), nameLength);
 
-		os.write(reinterpret_cast<const char*>(&type), sizeof(Type));
-	}
-
-	void deserialize(std::fstream& istr)
-	{
-		std::size_t nameLength;
-		istr.read(reinterpret_cast<char*>(&nameLength), sizeof(std::size_t));
-
-		char* buffer = new char[nameLength + 1];
-		istr.read(buffer, nameLength);
-		buffer[nameLength] = '\0';
-		name = buffer;
-		delete[] buffer;
-
-		istr.read(reinterpret_cast<char*>(&type), sizeof(Type));
-	}
+	/// <summary>
+	/// A simple binary deserialization method for DataColumn struct.
+	/// 
+	/// It takes a reference of type fstream and won't be closing it afterwards.
+	/// </summary>
+	void deserialize(std::fstream& istr);
 };
 
-template<>
-struct std::hash<DataColumn>
+namespace std
 {
-	std::size_t operator()(const DataColumn& col) const noexcept
+	/// <summary>
+	/// Specialization of std::hash for the DataColumn struct.
+	/// </summary>
+	template<>
+	struct hash<DataColumn>
 	{
-		return std::hash<std::string>()(col.name);
-	}
-};
+		/// <summary>
+		/// Computes the hash value for a DataColumn object.
+		/// </summary>
+		size_t operator()(const DataColumn& col) const noexcept
+		{
+			return std::hash<std::string>()(col.name);
+		}
+	};
+}
 
-template<>
-struct std::equal_to<DataColumn>
+namespace std
 {
-	bool operator()(const DataColumn& rcol, const DataColumn& lcol) const
+	/// <summary>
+	/// Specialization of std::equal_to for the DataColumn struct.
+	/// </summary>
+	template<>
+	struct equal_to<DataColumn>
 	{
-		return rcol.name == lcol.name && rcol.type == lcol.type;
-	}
-};
+		/// <summary>
+		/// Checks whether two DataColumn objects are equal.
+		/// </summary>
+		bool operator()(const DataColumn& rcol, const DataColumn& lcol) const
+		{
+			return rcol.name == lcol.name;
+		}
+	};
+}

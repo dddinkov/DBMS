@@ -26,7 +26,7 @@ const std::string Tokenizer::KEYWORDS[] =
 	"AVG",
 	"SUM",
 	"INDEX",
-	"on"
+	"ON"
 };
 
 const std::string Tokenizer::DATATYPES[] = { "bool", "string", "int", "double" };
@@ -85,7 +85,7 @@ std::istream& operator>>(std::istream& in, Tokenizer::Token &t)
 			t.value = word;
 			return in;
 		}
-		throw std::exception("I don't know what's wrong, honestly!");
+		throw std::runtime_error("I don't know what's wrong, honestly!");
 	}
 
 	// A single * will be considered an identifier
@@ -164,7 +164,7 @@ std::istream& operator>>(std::istream& in, Tokenizer::Token &t)
 
 		std::string message = "An invalid string literal: " + word;
 
-		throw std::invalid_argument(message);
+		throw std::runtime_error(message);
 	}
 
 	// Double and int literals
@@ -189,7 +189,7 @@ std::istream& operator>>(std::istream& in, Tokenizer::Token &t)
 
 		std::string message = "An invalid expression: " + word;
 
-		throw std::invalid_argument(message);
+		throw std::runtime_error(message);
 	}
 
 	// Bool literal is checked above with identifiers and keywords
@@ -278,7 +278,7 @@ bool Tokenizer::isLiteral(const std::string& word)
 
 bool Tokenizer::isBoolLiteral(const std::string& word)
 {
-	if (word == "True" || word == "False")
+	if (word == "TRUE" || word == "FALSE")
 	{
 		return true;
 	}
@@ -399,4 +399,13 @@ typename Tokenizer::Token Tokenizer::peek()
 	copyStream >> *peeked;
 
 	return *peeked;
+}
+
+Tokenizer::~Tokenizer()
+{
+
+	if (peeked != nullptr)
+	{
+		delete peeked;
+	}
 }

@@ -1,11 +1,11 @@
-#pragma once
-
 #include "table.h"
+#include "btree.h"
 #include <iomanip>
 #include <exception>
 #include <cstddef>
 #include <iostream>
 #include <fstream>
+#include <algorithm>
 
 void Table::check_key(const std::string& val)
 {
@@ -13,11 +13,11 @@ void Table::check_key(const std::string& val)
 	{
 		return;
 	}
-	for (DataRow row : rows)
+	for (DataRow& row : rows)
 	{
 		if (row[primary_key] == val)
 		{
-			throw std::exception("ERROR: A duplicate key occured.");
+			throw std::runtime_error("ERROR: Duplicate primary key value. ");
 		}
 	}
 }
@@ -52,6 +52,10 @@ std::size_t Table::size() const
 
 void Table::addColumn(const DataColumn& col)
 {
+	if (getCol(col.name).type != Type::Null)
+	{
+		throw std::invalid_argument("Columns already exists: " + col.name);
+	}
 	columns.push_back(col);
 }
 
@@ -73,8 +77,8 @@ void Table::insert(const std::vector<std::string>& values)
 {
 	if (values.size() != columns.size())
 	{
-		std::string message = "Amount of arguments to be inserted doesn't match size of columns:\nGiven: " + values.size();
-		message += "\nNeeded: " + columns.size();
+		std::string message = "Amount of arguments to be inserted doesn't match size of columns:\nGiven: " + std::to_string(values.size());
+		message += "\nNeeded: " + std::to_string(columns.size());
 		throw std::invalid_argument(message);
 	}
 
@@ -83,28 +87,49 @@ void Table::insert(const std::vector<std::string>& values)
 	{
 		row.add(columns[i], values[i]);
 	}
+
+	if (primary_key.type != Type::Null)
+	{
+		check_key(row[primary_key]);
+	}
+
 	rows.push_back(row);
 }
 
-void Table::update(const std::vector<std::string>& cols, const std::vector<std::string>& values, const std::string& key, const std::string& keyValue, const std::string& op)
+std::size_t Table::update(const std::vector<std::string>& cols, const std::vector<std::string>& values, const std::string& key, const std::string& op, const std::string& keyValue)
 {
 	std::vector<DataColumn> dataCols;
-	DataColumn colKey;
+	DataColumn colKey = getCol(key);
+
+	if (colKey.type == Type::Null)
+	{
+		std::string message = "ERROR:Unrecognised column: " + key;
+		throw std::invalid_argument(message);
+	}
+
 	for (std::size_t i = 0; i < cols.size(); ++i)
 	{
 		DataColumn dataCol = getCol(cols[i]);
 		if (dataCol.type == Type::Null)
 		{
-			std::string message = "Unrecognised column: " + cols[i];
+			std::string message = "ERROR:Unrecognised column: " + cols[i];
 			throw std::invalid_argument(message);
 		}
 		dataCols.push_back(dataCol);
+
+		// Duplicate on primary key check
+		if (dataCol == primary_key)
+		{
+			check_key(values[i]);
+		}
 	}
 
-	if (dataCols.size() < values.size())
+	if (dataCols.size() != values.size())
 	{
-		throw std::exception("Unrecognised identifiers.");
+		throw std::runtime_error("ERROR:Size of columns doesn't match size of values.");
 	}
+
+	std::size_t updatedRows = 0;
 
 	for (DataRow& row : this->rows)
 	{
@@ -116,6 +141,7 @@ void Table::update(const std::vector<std::string>& cols, const std::vector<std::
 				{
 					row.update(dataCols[i], values[i]);
 				}
+				++updatedRows;
 			}
 		}
 		else if (op == "!=")
@@ -126,6 +152,7 @@ void Table::update(const std::vector<std::string>& cols, const std::vector<std::
 				{
 					row.update(dataCols[i], values[i]);
 				}
+				++updatedRows;
 			}
 		}
 		else if (op == "<=")
@@ -138,6 +165,7 @@ void Table::update(const std::vector<std::string>& cols, const std::vector<std::
 				{
 					row.update(dataCols[i], values[i]);
 				}
+				++updatedRows;
 			}
 		}
 		else if (op == "<")
@@ -150,6 +178,7 @@ void Table::update(const std::vector<std::string>& cols, const std::vector<std::
 				{
 					row.update(dataCols[i], values[i]);
 				}
+				++updatedRows;
 			}
 		}
 		else if (op == ">=")
@@ -163,6 +192,7 @@ void Table::update(const std::vector<std::string>& cols, const std::vector<std::
 					row.update(dataCols[i], values[i]);
 				}
 			}
+			++updatedRows;
 		}
 		else if (op == ">")
 		{
@@ -175,38 +205,77 @@ void Table::update(const std::vector<std::string>& cols, const std::vector<std::
 					row.update(dataCols[i], values[i]);
 				}
 			}
+			++updatedRows;
 		}
 	}
+
+	return updatedRows;
 }
 
 Table Table::orderBy(const std::string& col, const bool& asc) const
 {
 	Table res;
 	res.columns = columns;
-	res.rows = rows;
 	res.primary_key = primary_key;
 
-	DataColumn dataCol;
-
-	for (const DataColumn& column : columns)
+	DataColumn dataCol = getCol(col);
+	if (dataCol.type == Type::Null)
 	{
-		if (column.name == col)
+		throw std::invalid_argument("Column doesn't exist: " + col);
+	}
+
+	// If an index with col exists, and we are not in an anonymous table
+	if (name != "")
+	{
+		std::string fileName = this->name + "_" + col + ".bin";
+		std::fstream in(fileName, std::ios::in | std::ios::binary);
+
+		if (in.good())
 		{
-			dataCol = column;
+			
+			BTree tree;
+			tree.deserialize(in);
+			in.close();
+			std::vector<std::streampos> positions = tree.inorderTraversal();
+
+			std::fstream temp(this->name + ".bin", std::ios::in | std::ios::binary);
+
+			for (const std::streampos& pos : positions)
+			{
+
+				DataRow row;
+
+				temp.seekg(pos);
+
+				row.deserialize(temp);
+
+				res.rows.push_back(row);
+			}
+
+			temp.close();
+
+			if (!asc)
+			{
+				std::reverse(res.rows.begin(), res.rows.end());
+			}
+
+			return res;
 		}
 	}
+
+	// We will be sorting the rows manually if there is no index
+	res.rows = rows;
 
 	for (std::size_t i = 0; i < res.rows.size(); ++i)
 	{
 		std::size_t top = i;
 		for (std::size_t j = i + 1; j < rows.size(); ++j)
 		{
-			std::size_t colIndex = 0;
-			if (res.rows[i].compare(dataCol, res.rows[j]) == -1 && !asc)
+			if (res.rows[top].compare(dataCol, res.rows[j]) == -1 && !asc)
 			{
 				top = j;
 			}
-			else if (res.rows[i].compare(dataCol, res.rows[j]) == 1 && asc)
+			else if (res.rows[top].compare(dataCol, res.rows[j]) == 1 && asc)
 			{
 				top = j;
 			}
@@ -221,24 +290,55 @@ Table Table::orderBy(const std::string& col, const bool& asc) const
 	return res;
 }
 
-Table Table::filterBy(const std::string& col, const std::string& op, const std::string& value)
+Table Table::filterBy(const std::string& col, const std::string& op, const std::string& value) const
 {
 	Table res;
 	res.columns = columns;
 	res.primary_key = primary_key;
 
-	DataColumn dataCol;
-
-	for (const DataColumn& column : columns)
+	DataColumn dataCol = getCol(col);
+	if (dataCol.type == Type::Null)
 	{
-		if (column.name == col)
-		{
-			dataCol = column;
-		}
+		throw std::invalid_argument("Column doesn't exist: " + col);
 	}
 
+	// If an index with col exists, and we are not in an anonymous table
+	if (name != "" && op == "=")
+	{
+		std::string fileName = this->name + "_" + col + ".bin";
+		std::fstream in(fileName, std::ios::in | std::ios::binary);
+
+		if (in.good())
+		{
+			BTree tree;
+			tree.deserialize(in);
+			in.close();
+			std::vector<std::streampos> positions = tree.search(value);
+
+			std::fstream temp(this->name + ".bin", std::ios::in | std::ios::binary);
+			
+			for (const std::streampos& pos : positions)
+			{
+
+				DataRow row;
+
+				temp.seekg(pos);
+
+				row.deserialize(temp);
+
+				res.rows.push_back(row);
+			}
+
+			temp.close();
+
+			return res;
+		}
+	}
+	
+	// If we don't have an index, we go through all records
 	for (DataRow row : rows)
 	{
+		// Making temporary row for the comparison
 		DataRow temp;
 		temp.add(dataCol, value);
 
@@ -295,16 +395,11 @@ void Table::print(const std::vector<std::string>& cols) const
 			}
 			else
 			{
-				for (const DataColumn& myCol : columns)
+				DataColumn myCol = getCol(cols[i]);
+				std::cout << row[myCol];
+				if (i != cols.size() - 1)
 				{
-					if (myCol.name == col)
-					{
-						std::cout << row[myCol];
-						if (i != cols.size() - 1)
-						{
-							std::cout << ", ";
-						}
-					}
+					std::cout << ", ";
 				}
 			}
 		}
@@ -341,7 +436,13 @@ void Table::save()
 void Table::read()
 {
 	std::string fileName = this->name + ".bin";
-	std::fstream is(fileName, std::ios::in);
+	std::fstream is(fileName, std::ios::in | std::ios::binary);
+
+	if (!is.good())
+	{
+		std::string message = "Unrecognised table: " + this->name;
+		throw std::invalid_argument(message);
+	}
 
 	std::size_t columnsLength, rowsLength;
 	is.read(reinterpret_cast<char*>(&columnsLength), sizeof(std::size_t));
@@ -479,6 +580,64 @@ double Table::sum(const std::string& col) const
 		sum += current;
 	}
 	return sum;
+}
+
+void Table::createIndex(const std::string& col) const
+{
+	// We will read the current table from it's file and give the locations of the DataRow data to each node in the tree
+	// and insert the key (the given column value).
+	std::string tableFileName = this->name + ".bin";
+	std::fstream is(tableFileName, std::ios::in);
+
+	if (!is.good())
+	{
+		throw std::runtime_error("ERROR:Attempted to create an index on an unknown table.");
+	}
+
+	std::size_t columnsLength, rowsLength;
+	is.read(reinterpret_cast<char*>(&columnsLength), sizeof(std::size_t));
+	is.read(reinterpret_cast<char*>(&rowsLength), sizeof(std::size_t));
+
+	DataColumn dataCol;
+	dataCol.type = Type::Null;
+
+	for (std::size_t i = 0; i < columnsLength; ++i)
+	{
+		DataColumn temp;
+		temp.deserialize(is);
+		if (temp.name == col)
+		{
+			dataCol.name = temp.name;
+			dataCol.type = temp.type;
+		}
+	}
+
+	if (dataCol.type == Type::Null)
+	{
+		std::string message = "Column doesn't exist: " + col + ".";
+		throw std::invalid_argument(message);
+	}
+
+	BTree indexTree(dataCol.type, 2, nullptr);
+
+	for (std::size_t i = 0; i < rowsLength; ++i)
+	{
+		DataRow row;
+		std::streampos pointer = is.tellg();
+		row.deserialize(is);
+		indexTree.insert(row[dataCol], pointer);
+		// rows.push_back(row);
+	}
+
+	// this->primary_key.deserialize(is);
+
+	is.close();
+
+	// The name of the file where the index will be stored
+	std::string fileName = this->name + "_" + col + ".bin";
+	std::fstream os(fileName, std::ios::out | std::ios::binary);
+	indexTree.serialize(os);
+	os.close();
 }
 
 

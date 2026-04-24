@@ -1,0 +1,137 @@
+\doxysection{Tokenizer Class Reference}
+\hypertarget{class_tokenizer}{}\label{class_tokenizer}\index{Tokenizer@{Tokenizer}}
+
+
+A tokenizer class to simplify user input in separate tokens.  
+
+
+
+
+{\ttfamily \#include $<$tokenizer.\+h$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_tokenizer_1_1_token}{Token}}
+\begin{DoxyCompactList}\small\item\em Represents the fundamental elements of a tokenizer. They are called tokens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_tokenizer_a1d08c977f18c018363025da487b0694a}{Tokens}} \{ \newline
+\mbox{\hyperlink{class_tokenizer_a1d08c977f18c018363025da487b0694aa785ba92776e3f25995ca1b5aaf6480cf}{KEYWORD}}
+, \mbox{\hyperlink{class_tokenizer_a1d08c977f18c018363025da487b0694aaaf9352044316a116f66fcc005c1f1647}{DATATYPE}}
+, \mbox{\hyperlink{class_tokenizer_a1d08c977f18c018363025da487b0694aaf407f8f81079c4bd6359a63039963fb9}{IDENTIFIER}}
+, \mbox{\hyperlink{class_tokenizer_a1d08c977f18c018363025da487b0694aa6e35c28d66adb5fff2bb81132025e2d9}{LITERAL}}
+, \newline
+\mbox{\hyperlink{class_tokenizer_a1d08c977f18c018363025da487b0694aa8969471945f2ca9ce4fb368a6c0d558c}{PUNCTUATION}}
+, \mbox{\hyperlink{class_tokenizer_a1d08c977f18c018363025da487b0694aa10eb3ba99e5fc62ad197932990ff559b}{OPERATOR}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumerates the fundamental elements (tokens) of the \doxylink{class_tokenizer}{Tokenizer}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_tokenizer_a7b3e3a88c1303149e4ac5b1365f98c03}\label{class_tokenizer_a7b3e3a88c1303149e4ac5b1365f98c03} 
+{\bfseries Tokenizer} (\mbox{\hyperlink{classstd_1_1basic__istream}{std\+::istream}} \&)
+\begin{DoxyCompactList}\small\item\em \doxylink{class_tokenizer}{Tokenizer} constructor taking input stream object by reference. \end{DoxyCompactList}\item 
+\Hypertarget{class_tokenizer_a3b72e93988743f9acc48fd14c0601f9e}\label{class_tokenizer_a3b72e93988743f9acc48fd14c0601f9e} 
+\mbox{\hyperlink{struct_tokenizer_1_1_token}{Token}} {\bfseries get\+Next\+Token} ()
+\begin{DoxyCompactList}\small\item\em A \doxylink{class_tokenizer}{Tokenizer} function to read the upcoming token from the private field in. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_tokenizer_1_1_token}{Token}} \mbox{\hyperlink{class_tokenizer_a0f75a9d9fdcf639f560ff881a24a343d}{peek}} ()
+\begin{DoxyCompactList}\small\item\em A \doxylink{class_tokenizer}{Tokenizer} function to peek the next token, without reading it. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_tokenizer_a3f60f887953edf0f95ba5f36102f7017}{\texorpdfstring{$\sim$}{\string~}\+Tokenizer}} ()
+\begin{DoxyCompactList}\small\item\em A \doxylink{class_tokenizer}{Tokenizer} destructor to release dynamic fields. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classstd_1_1basic__istream}{std\+::istream}} \& \mbox{\hyperlink{class_tokenizer_a2ba5872eb39ed74ec5a08803165249ab}{operator$>$$>$}} (\mbox{\hyperlink{classstd_1_1basic__istream}{std\+::istream}} \&, \mbox{\hyperlink{struct_tokenizer_1_1_token}{Tokenizer\+::\+Token}} \&)
+\begin{DoxyCompactList}\small\item\em A Tokenizer-\/friendly overload for operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} for inputting a token from istream object. \end{DoxyCompactList}\item 
+\Hypertarget{class_tokenizer_a7c4c4fb48b4917b89c724c8c24467dbe}\label{class_tokenizer_a7c4c4fb48b4917b89c724c8c24467dbe} 
+\mbox{\hyperlink{classstd_1_1basic__ostream}{std\+::ostream}} \& {\bfseries operator$<$$<$} (\mbox{\hyperlink{classstd_1_1basic__ostream}{std\+::ostream}} \&, const \mbox{\hyperlink{struct_tokenizer_1_1_token}{Tokenizer\+::\+Token}} \&)
+\begin{DoxyCompactList}\small\item\em A Tokenizer-\/friendly overload for operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} for outputing a token to ostream object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A tokenizer class to simplify user input in separate tokens. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_tokenizer_a1d08c977f18c018363025da487b0694a}\label{class_tokenizer_a1d08c977f18c018363025da487b0694a} 
+\index{Tokenizer@{Tokenizer}!Tokens@{Tokens}}
+\index{Tokens@{Tokens}!Tokenizer@{Tokenizer}}
+\doxysubsubsection{\texorpdfstring{Tokens}{Tokens}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_tokenizer_a1d08c977f18c018363025da487b0694a}{Tokenizer\+::\+Tokens}}}
+
+
+
+Enumerates the fundamental elements (tokens) of the \doxylink{class_tokenizer}{Tokenizer}. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEYWORD@{KEYWORD}!Tokenizer@{Tokenizer}}\index{Tokenizer@{Tokenizer}!KEYWORD@{KEYWORD}}}\Hypertarget{class_tokenizer_a1d08c977f18c018363025da487b0694aa785ba92776e3f25995ca1b5aaf6480cf}\label{class_tokenizer_a1d08c977f18c018363025da487b0694aa785ba92776e3f25995ca1b5aaf6480cf} 
+KEYWORD&Represents keywords. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DATATYPE@{DATATYPE}!Tokenizer@{Tokenizer}}\index{Tokenizer@{Tokenizer}!DATATYPE@{DATATYPE}}}\Hypertarget{class_tokenizer_a1d08c977f18c018363025da487b0694aaaf9352044316a116f66fcc005c1f1647}\label{class_tokenizer_a1d08c977f18c018363025da487b0694aaaf9352044316a116f66fcc005c1f1647} 
+DATATYPE&Represents datatypes -\/ int, string, bool, and double. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IDENTIFIER@{IDENTIFIER}!Tokenizer@{Tokenizer}}\index{Tokenizer@{Tokenizer}!IDENTIFIER@{IDENTIFIER}}}\Hypertarget{class_tokenizer_a1d08c977f18c018363025da487b0694aaf407f8f81079c4bd6359a63039963fb9}\label{class_tokenizer_a1d08c977f18c018363025da487b0694aaf407f8f81079c4bd6359a63039963fb9} 
+IDENTIFIER&Represents identifiers -\/ words containing all letters, the symbol \textquotesingle{}\+\_\+\textquotesingle{}, and digits. An identifier cannot begin with a digit! \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LITERAL@{LITERAL}!Tokenizer@{Tokenizer}}\index{Tokenizer@{Tokenizer}!LITERAL@{LITERAL}}}\Hypertarget{class_tokenizer_a1d08c977f18c018363025da487b0694aa6e35c28d66adb5fff2bb81132025e2d9}\label{class_tokenizer_a1d08c977f18c018363025da487b0694aa6e35c28d66adb5fff2bb81132025e2d9} 
+LITERAL&Represents literals -\/ int, string, bool, and double literals. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PUNCTUATION@{PUNCTUATION}!Tokenizer@{Tokenizer}}\index{Tokenizer@{Tokenizer}!PUNCTUATION@{PUNCTUATION}}}\Hypertarget{class_tokenizer_a1d08c977f18c018363025da487b0694aa8969471945f2ca9ce4fb368a6c0d558c}\label{class_tokenizer_a1d08c977f18c018363025da487b0694aa8969471945f2ca9ce4fb368a6c0d558c} 
+PUNCTUATION&Represents punctuation characters -\/ \textquotesingle{}(\textquotesingle{}, \textquotesingle{})\textquotesingle{}, \textquotesingle{},\textquotesingle{}, \textquotesingle{};\textquotesingle{}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OPERATOR@{OPERATOR}!Tokenizer@{Tokenizer}}\index{Tokenizer@{Tokenizer}!OPERATOR@{OPERATOR}}}\Hypertarget{class_tokenizer_a1d08c977f18c018363025da487b0694aa10eb3ba99e5fc62ad197932990ff559b}\label{class_tokenizer_a1d08c977f18c018363025da487b0694aa10eb3ba99e5fc62ad197932990ff559b} 
+OPERATOR&Represents operators -\/ =, !=, \texorpdfstring{$<$}{<}, \texorpdfstring{$<$}{<}=, \texorpdfstring{$>$}{>}, \texorpdfstring{$>$}{>}=. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_tokenizer_a3f60f887953edf0f95ba5f36102f7017}\label{class_tokenizer_a3f60f887953edf0f95ba5f36102f7017} 
+\index{Tokenizer@{Tokenizer}!````~Tokenizer@{\texorpdfstring{$\sim$}{\string~}Tokenizer}}
+\index{````~Tokenizer@{\texorpdfstring{$\sim$}{\string~}Tokenizer}!Tokenizer@{Tokenizer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Tokenizer()}{\string~Tokenizer()}}
+{\footnotesize\ttfamily Tokenizer\+::\texorpdfstring{$\sim$}{\string~}\+Tokenizer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A \doxylink{class_tokenizer}{Tokenizer} destructor to release dynamic fields. 
+
+In this case release peeked if it\textquotesingle{}s not released. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_tokenizer_a0f75a9d9fdcf639f560ff881a24a343d}\label{class_tokenizer_a0f75a9d9fdcf639f560ff881a24a343d} 
+\index{Tokenizer@{Tokenizer}!peek@{peek}}
+\index{peek@{peek}!Tokenizer@{Tokenizer}}
+\doxysubsubsection{\texorpdfstring{peek()}{peek()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_tokenizer_1_1_token}{Tokenizer\+::\+Token}} Tokenizer\+::peek (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A \doxylink{class_tokenizer}{Tokenizer} function to peek the next token, without reading it. 
+
+The function does not read the token from the private in object, but rather makes a buffer to store the contents of it and read the token from there. 
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_tokenizer_a2ba5872eb39ed74ec5a08803165249ab}\label{class_tokenizer_a2ba5872eb39ed74ec5a08803165249ab} 
+\index{Tokenizer@{Tokenizer}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Tokenizer@{Tokenizer}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classstd_1_1basic__istream}{std\+::istream}} \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classstd_1_1basic__istream}{std\+::istream}} \&}]{in,  }\item[{\mbox{\hyperlink{struct_tokenizer_1_1_token}{Tokenizer\+::\+Token}} \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+A Tokenizer-\/friendly overload for operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} for inputting a token from istream object. 
+
+Throws exceptions on unspecified tokens. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+ACER/\+Desktop/school/\+FMI-\/\+CS/3 s/\+SDP/\+DBMS/\+DBMS/tokenizer.\+h\item 
+C\+:/\+Users/\+ACER/\+Desktop/school/\+FMI-\/\+CS/3 s/\+SDP/\+DBMS/\+DBMS/tokenizer.\+cpp\end{DoxyCompactItemize}

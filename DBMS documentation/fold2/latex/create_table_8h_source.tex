@@ -1,0 +1,39 @@
+\doxysection{create\+Table.\+h}
+\hypertarget{create_table_8h_source}{}\label{create_table_8h_source}\index{C:/Users/ACER/Desktop/school/FMI-\/CS/3 s/SDP/DBMS/DBMS/createTable.h@{C:/Users/ACER/Desktop/school/FMI-\/CS/3 s/SDP/DBMS/DBMS/createTable.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}operation.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}columnDatatypePairs.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}primaryKey.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_create_table}{CreateTable}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_operation}{Operation}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ std::string\ table;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{struct_column_datatype_pairs}{ColumnDatatypePairs}}\ pairs;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{struct_primary_key}{PrimaryKey}}*\ pk;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ copy(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_create_table}{CreateTable}}\&);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ deallocate();}
+\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_create_table_a796e2c89caa4a83e58ab157bb4330233}{CreateTable}}();}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_create_table_a796e2c89caa4a83e58ab157bb4330233}{CreateTable}}(\textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_column_datatype_pairs}{ColumnDatatypePairs}}\&,\ \mbox{\hyperlink{struct_primary_key}{PrimaryKey}}*);}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{class_create_table_a796e2c89caa4a83e58ab157bb4330233}{CreateTable}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_create_table}{CreateTable}}\&);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{class_create_table}{CreateTable}}\&\ \mbox{\hyperlink{class_create_table_a1a5c5b5e0528b48c014bfd729bd3c6a3}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_create_table}{CreateTable}}\&);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_create_table_a482a645eaf25afd1d06233f2694c12b5}{eval}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{class_operation}{Operation}}*\ \mbox{\hyperlink{class_create_table_ac6b76faddef2219493986019640786b6}{clone}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{classstd_1_1basic__istream}{std::istream}}\&\ \mbox{\hyperlink{class_create_table_ac3cb60f653b53a76b0dbeda056d77232}{operator>>}}(\mbox{\hyperlink{classstd_1_1basic__istream}{std::istream}}\&,\ \mbox{\hyperlink{class_create_table}{CreateTable}}*\&);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{class_create_table_a2e04f553291800794c3ef460b1d71d9d}{\string~CreateTable}}();}
+\DoxyCodeLine{00081\ \};}
+
+\end{DoxyCode}

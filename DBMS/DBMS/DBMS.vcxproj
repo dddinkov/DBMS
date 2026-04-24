@@ -88,6 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -142,12 +143,14 @@
     <ClCompile Include="aggregate.cpp" />
     <ClCompile Include="aggregates.cpp" />
     <ClCompile Include="assignOperations.cpp" />
+    <ClCompile Include="btree.cpp" />
     <ClCompile Include="columnDatatypePairs.cpp" />
     <ClCompile Include="columns.cpp" />
     <ClCompile Include="condition.cpp" />
     <ClCompile Include="createIndex.cpp" />
     <ClCompile Include="createTable.cpp" />
     <ClCompile Include="dataRow.cpp" />
+    <ClCompile Include="dataColumn.cpp" />
     <ClCompile Include="DBMS.cpp" />
     <ClCompile Include="insertInto.cpp" />
     <ClCompile Include="insertInto.h" />
@@ -158,6 +161,10 @@
     <ClCompile Include="queryArguments.cpp" />
     <ClCompile Include="table.cpp" />
     <ClCompile Include="tokenizer.cpp" />
+    <ClCompile Include="Unit tests\btreeTests.cpp" />
+    <ClCompile Include="Unit tests\operationTests.cpp" />
+    <ClCompile Include="Unit tests\tableTests.cpp" />
+    <ClCompile Include="Unit tests\tokenizerTests.cpp" />
     <ClCompile Include="update.cpp" />
     <ClCompile Include="values.cpp" />
     <ClCompile Include="whereClause.cpp" />
@@ -167,6 +174,7 @@
     <ClInclude Include="aggregate.h" />
     <ClInclude Include="aggregates.h" />
     <ClInclude Include="assignOperations.h" />
+    <ClInclude Include="btree.h" />
     <ClInclude Include="columnDatatypePairs.h" />
     <ClInclude Include="columns.h" />
     <ClInclude Include="condition.h" />

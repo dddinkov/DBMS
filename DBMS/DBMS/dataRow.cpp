@@ -1,5 +1,5 @@
-#pragma once
 #include "dataRow.h"
+#include <vector>
 #include <exception>
 #include <iostream>
 #include <iomanip>
@@ -73,16 +73,16 @@ void DataRow::validate(const DataColumn& key, const std::string& val)
 {
 	if (key.type == Type::String && val[0] != '\"' && val[val.size() - 1] != '\"')
 	{
-		throw std::exception("Trying to alter field with type string went wrong.");
+		throw std::runtime_error("Trying to alter field with type string went wrong.");
 	}
 	else if (key.type == Type::Bool &&
-		!(val == "True" || val == "False"))
+		!(val == "TRUE" || val == "FALSE"))
 	{
-		throw std::exception("Trying to alter field with type bool went wrong.");
+		throw std::runtime_error("Trying to alter field with type bool went wrong.");
 	}
 	else if (key.type == Type::Int && val.find('.') != -1)
 	{
-		throw std::exception("Trying to alter field with type int went wrong.");
+		throw std::runtime_error("Trying to alter field with type int went wrong.");
 	}
 	else if (key.type == Type::Int)
 	{
@@ -92,7 +92,7 @@ void DataRow::validate(const DataColumn& key, const std::string& val)
 		}
 		catch (std::exception)
 		{
-			throw std::exception("Trying to alter field with type int went wrong.");
+			throw std::runtime_error("Trying to alter field with type int went wrong.");
 		}
 	}
 	else if (key.type == Type::Double)
@@ -103,7 +103,7 @@ void DataRow::validate(const DataColumn& key, const std::string& val)
 		}
 		catch (std::exception)
 		{
-			throw std::exception("Trying to alter field with type double went wrong.");
+			throw std::runtime_error("Trying to alter field with type double went wrong.");
 		}
 	}
 }
@@ -126,7 +126,7 @@ int DataRow::compare(const DataColumn& col, const DataRow& row)
 	}
 	if (col.type == Type::Bool)
 	{
-		if (record[col] == "True")
+		if (record[col] == "TRUE")
 		{
 			return 1;
 		}

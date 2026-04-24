@@ -1,0 +1,89 @@
+\doxysection{Node Struct Reference}
+\hypertarget{struct_node}{}\label{struct_node}\index{Node@{Node}}
+
+
+A \doxylink{struct_node}{Node} struct to represent each vertex in the \doxylink{class_b_tree}{BTree}.  
+
+
+
+
+{\ttfamily \#include $<$btree.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_node_adb273686bf87ac45e6291c65193ac548}{Node}} (std\+::vector$<$ std\+::string $>$, std\+::vector$<$ \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} $>$, std\+::vector$<$ std\+::vector$<$ std\+::streampos $>$ $>$)
+\begin{DoxyCompactList}\small\item\em A default, and parameterized constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_node_aef17a7d9f2916882a67ae3b69e9630a5}{serialize}} (std\+::fstream \&)
+\begin{DoxyCompactList}\small\item\em A simple binary serialization method for a \doxylink{struct_node}{Node} in the \doxylink{class_b_tree}{BTree}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_node_ae5afd54c60ebab2626f0d310c2d94568}{deserialize}} (std\+::fstream \&)
+\begin{DoxyCompactList}\small\item\em A simple binary deserialization method for a \doxylink{struct_node}{Node} in the \doxylink{class_b_tree}{BTree}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_node_a05a084be78e412f34204e1d4cc1f3b30}\label{struct_node_a05a084be78e412f34204e1d4cc1f3b30} 
+std\+::vector$<$ std\+::string $>$ {\bfseries keys}
+\begin{DoxyCompactList}\small\item\em The \doxylink{class_b_tree}{BTree} \doxylink{struct_node}{Node} has a set of keys, they are maintained in a sorted order (ascending). \end{DoxyCompactList}\item 
+\Hypertarget{struct_node_a49baf1d613dc14f1e1e4aad883dde6fe}\label{struct_node_a49baf1d613dc14f1e1e4aad883dde6fe} 
+std\+::vector$<$ \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries children}
+\begin{DoxyCompactList}\small\item\em The \doxylink{class_b_tree}{BTree} \doxylink{struct_node}{Node} also has a set of children. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ std\+::streampos $>$ $>$ \mbox{\hyperlink{struct_node_aa52648d8a063c0ba1d6d1fdce7ec1aa4}{pointers}}
+\begin{DoxyCompactList}\small\item\em Each key will be linked to a series of streampos, pointing to the corresponding Data\+Rows inside a specific table\textquotesingle{}s deserialized contents. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \doxylink{struct_node}{Node} struct to represent each vertex in the \doxylink{class_b_tree}{BTree}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_node_adb273686bf87ac45e6291c65193ac548}\label{struct_node_adb273686bf87ac45e6291c65193ac548} 
+\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}}
+{\footnotesize\ttfamily Node\+::\+Node (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{keys = {\ttfamily std\+:\+:vector$<$std\+:\+:string$>$()},  }\item[{std\+::vector$<$ \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} $>$}]{children = {\ttfamily std\+:\+:vector$<$\mbox{\hyperlink{struct_node}{Node}}\texorpdfstring{$\ast$}{*}$>$()},  }\item[{std\+::vector$<$ std\+::vector$<$ std\+::streampos $>$ $>$}]{pointers = {\ttfamily std\+:\+:vector$<$std\+:\+:vector$<$std\+:\+:streampos$>$$>$()} }\end{DoxyParamCaption})}
+
+
+
+A default, and parameterized constructor. 
+
+Shallow copy for the children. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_node_ae5afd54c60ebab2626f0d310c2d94568}\label{struct_node_ae5afd54c60ebab2626f0d310c2d94568} 
+\index{Node@{Node}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily void Node\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::fstream \&}]{istr }\end{DoxyParamCaption})}
+
+
+
+A simple binary deserialization method for a \doxylink{struct_node}{Node} in the \doxylink{class_b_tree}{BTree}. 
+
+It takes a reference of type fstream and won\textquotesingle{}t be closing it afterwards. \Hypertarget{struct_node_aef17a7d9f2916882a67ae3b69e9630a5}\label{struct_node_aef17a7d9f2916882a67ae3b69e9630a5} 
+\index{Node@{Node}!serialize@{serialize}}
+\index{serialize@{serialize}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily void Node\+::serialize (\begin{DoxyParamCaption}\item[{std\+::fstream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+A simple binary serialization method for a \doxylink{struct_node}{Node} in the \doxylink{class_b_tree}{BTree}. 
+
+It takes a reference of type fstream and won\textquotesingle{}t be closing it afterwards. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_node_aa52648d8a063c0ba1d6d1fdce7ec1aa4}\label{struct_node_aa52648d8a063c0ba1d6d1fdce7ec1aa4} 
+\index{Node@{Node}!pointers@{pointers}}
+\index{pointers@{pointers}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{pointers}{pointers}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$std\+::streampos$>$ $>$ Node\+::pointers}
+
+
+
+Each key will be linked to a series of streampos, pointing to the corresponding Data\+Rows inside a specific table\textquotesingle{}s deserialized contents. 
+
+We can\textquotesingle{}t simply hold just one streampos because one key may refer to multiple rows (unless it\textquotesingle{}s a primary key). 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+ACER/\+Desktop/school/\+FMI-\/\+CS/3 s/\+SDP/\+DBMS/\+DBMS/btree.\+h\item 
+C\+:/\+Users/\+ACER/\+Desktop/school/\+FMI-\/\+CS/3 s/\+SDP/\+DBMS/\+DBMS/btree.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,29 @@
+\doxysection{insert\+Into.\+h}
+\hypertarget{insert_into_8h_source}{}\label{insert_into_8h_source}\index{C:/Users/ACER/Desktop/school/FMI-\/CS/3 s/SDP/DBMS/DBMS/insertInto.h@{C:/Users/ACER/Desktop/school/FMI-\/CS/3 s/SDP/DBMS/DBMS/insertInto.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}operation.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}values.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_insert_into}{InsertInto}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_operation}{Operation}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ std::string\ table;}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{struct_values}{Values}}\ values;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_insert_into_a6168c944440767dd1c387fdb1227dac6}{InsertInto}}();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_insert_into_a6168c944440767dd1c387fdb1227dac6}{InsertInto}}(\textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_values}{Values}}\&);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_insert_into_a63ebf932c2a8c90a9a4cb5244174207c}{eval}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_operation}{Operation}}*\ \mbox{\hyperlink{class_insert_into_a69246bacd0c85074ba9445a690a45370}{clone}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{classstd_1_1basic__istream}{std::istream}}\&\ \mbox{\hyperlink{class_insert_into_a6b11b95c1deda8d2de23c647ab84581d}{operator>>}}(\mbox{\hyperlink{classstd_1_1basic__istream}{std::istream}}\&,\ \mbox{\hyperlink{class_insert_into}{InsertInto}}*\&);}
+\DoxyCodeLine{00050\ \};}
+
+\end{DoxyCode}

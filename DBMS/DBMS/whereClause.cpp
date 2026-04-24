@@ -17,7 +17,7 @@ std::istream& operator>>(std::istream& istr, WhereClause& clause)
 
 	if (token.value != "WHERE")
 	{
-		throw "Error: WHERE clause is missing.";
+		throw std::runtime_error("Error: WHERE clause is missing.");
 	}
 
 	tokenizer.getNextToken();

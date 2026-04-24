@@ -1,0 +1,98 @@
+\doxysection{BTree Class Reference}
+\hypertarget{class_b_tree}{}\label{class_b_tree}\index{BTree@{BTree}}
+
+
+A class representing a self-\/balancing ordered tree structure which leaves are all on the same level.  
+
+
+
+
+{\ttfamily \#include $<$btree.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_b_tree_ae3adf097939b1bce7fba5a5d55ff8907}\label{class_b_tree_ae3adf097939b1bce7fba5a5d55ff8907} 
+{\bfseries BTree} ()
+\begin{DoxyCompactList}\small\item\em A default constructor for a \doxylink{class_b_tree}{BTree}. \end{DoxyCompactList}\item 
+\Hypertarget{class_b_tree_ac81c211ec06a47a7e3e150a676ba8fa0}\label{class_b_tree_ac81c211ec06a47a7e3e150a676ba8fa0} 
+{\bfseries BTree} (Type, const std\+::size\+\_\+t \&, \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em A parameterized constructor for a \doxylink{class_b_tree}{BTree}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_b_tree_a2612810646efe6e135086701244b3a4f}{BTree}} (const \mbox{\hyperlink{class_b_tree}{BTree}} \&)
+\begin{DoxyCompactList}\small\item\em A copy constructor for a \doxylink{class_b_tree}{BTree}. \end{DoxyCompactList}\item 
+\Hypertarget{class_b_tree_ab54f8954bfebd126ea8b0f727c38e91b}\label{class_b_tree_ab54f8954bfebd126ea8b0f727c38e91b} 
+\mbox{\hyperlink{class_b_tree}{BTree}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_b_tree}{BTree}} \&)
+\begin{DoxyCompactList}\small\item\em operator= overload for a \doxylink{class_b_tree}{BTree}. \end{DoxyCompactList}\item 
+\Hypertarget{class_b_tree_a1d0dbad21ec825a7c8e5625709010e6c}\label{class_b_tree_a1d0dbad21ec825a7c8e5625709010e6c} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+BTree} ()
+\begin{DoxyCompactList}\small\item\em A destructor for a \doxylink{class_b_tree}{BTree}. \texorpdfstring{$<$}{<}\textbackslash{}summary\texorpdfstring{$>$}{>} \end{DoxyCompactList}\item 
+\Hypertarget{class_b_tree_ad25b681ba2a5ee2f0dd8f9ccb3ee6d91}\label{class_b_tree_ad25b681ba2a5ee2f0dd8f9ccb3ee6d91} 
+void {\bfseries insert} (const std\+::string \&, const std\+::streampos \&)
+\begin{DoxyCompactList}\small\item\em A function to insert a key, and a streampos in the tree. \end{DoxyCompactList}\item 
+\Hypertarget{class_b_tree_aaea8da37c7444ebb4b0531e7a58b0abf}\label{class_b_tree_aaea8da37c7444ebb4b0531e7a58b0abf} 
+std\+::vector$<$ std\+::streampos $>$ {\bfseries search} (const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em A function to find the streampos vector of a \doxylink{struct_node}{Node} by the given key. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::streampos $>$ \mbox{\hyperlink{class_b_tree_a534074ffa1c290326f2093c72e3cc2b5}{inorder\+Traversal}} ()
+\begin{DoxyCompactList}\small\item\em An inorder traversal of the root. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_b_tree_ae27e82c25565e129eca7216ccf73580d}{serialize}} (std\+::fstream \&)
+\begin{DoxyCompactList}\small\item\em A simple binary serialization method for class \doxylink{class_b_tree}{BTree}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_b_tree_a2c09387f16744cff89df714d20ba6da3}{deserialize}} (std\+::fstream \&)
+\begin{DoxyCompactList}\small\item\em A simple binary deserialization method for class \doxylink{class_b_tree}{BTree}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class representing a self-\/balancing ordered tree structure which leaves are all on the same level. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_b_tree_a2612810646efe6e135086701244b3a4f}\label{class_b_tree_a2612810646efe6e135086701244b3a4f} 
+\index{BTree@{BTree}!BTree@{BTree}}
+\index{BTree@{BTree}!BTree@{BTree}}
+\doxysubsubsection{\texorpdfstring{BTree()}{BTree()}}
+{\footnotesize\ttfamily BTree\+::\+BTree (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_b_tree}{BTree}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+A copy constructor for a \doxylink{class_b_tree}{BTree}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_b_tree_a2c09387f16744cff89df714d20ba6da3}\label{class_b_tree_a2c09387f16744cff89df714d20ba6da3} 
+\index{BTree@{BTree}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!BTree@{BTree}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily void BTree\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::fstream \&}]{istr }\end{DoxyParamCaption})}
+
+
+
+A simple binary deserialization method for class \doxylink{class_b_tree}{BTree}. 
+
+It takes a reference of type fstream and won\textquotesingle{}t be closing it afterwards. \Hypertarget{class_b_tree_a534074ffa1c290326f2093c72e3cc2b5}\label{class_b_tree_a534074ffa1c290326f2093c72e3cc2b5} 
+\index{BTree@{BTree}!inorderTraversal@{inorderTraversal}}
+\index{inorderTraversal@{inorderTraversal}!BTree@{BTree}}
+\doxysubsubsection{\texorpdfstring{inorderTraversal()}{inorderTraversal()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::streampos $>$ BTree\+::inorder\+Traversal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+An inorder traversal of the root. 
+
+\begin{DoxyReturn}{Returns}
+A streampos vector of all Data\+Rows\textquotesingle{} positions in ascending order of the keys (by type).
+\end{DoxyReturn}
+\Hypertarget{class_b_tree_ae27e82c25565e129eca7216ccf73580d}\label{class_b_tree_ae27e82c25565e129eca7216ccf73580d} 
+\index{BTree@{BTree}!serialize@{serialize}}
+\index{serialize@{serialize}!BTree@{BTree}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily void BTree\+::serialize (\begin{DoxyParamCaption}\item[{std\+::fstream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+A simple binary serialization method for class \doxylink{class_b_tree}{BTree}. 
+
+It takes a reference of type fstream and won\textquotesingle{}t be closing it afterwards. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+ACER/\+Desktop/school/\+FMI-\/\+CS/3 s/\+SDP/\+DBMS/\+DBMS/btree.\+h\item 
+C\+:/\+Users/\+ACER/\+Desktop/school/\+FMI-\/\+CS/3 s/\+SDP/\+DBMS/\+DBMS/btree.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,21 @@
+[2024-01-01 22:54:03] [info] Start Program:
+Path:"C:\\Users\\ACER\\Desktop\\school\\FMI-CS\\3 s\\SDP\\DBMS\\Debug\\DBMS.exe"
+Arguments:
+Working directory: "C:\\Users\\ACER\\Desktop\\school\\FMI-CS\\3 s\\SDP\\DBMS\\DBMS\\"
+Modules: Selected: C:\Users\ACER\Desktop\school\FMI-CS\3 s\SDP\DBMS\Debug\DBMS.exe Excluded: 
+Sources: Selected: C:\Users\ACER\Desktop\school\FMI-CS\3 s\SDP\DBMS\DBMS Excluded: *.h *tests.cpp 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: binary C:\Users\ACER\AppData\Local\Temp\nizccfqo.e5b 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2024-01-01 22:54:03] [info] Module: C:\Users\ACER\Desktop\school\FMI-CS\3 s\SDP\DBMS\Debug\DBMS.exe is selected because it matches selected pattern: C:\Users\ACER\Desktop\school\FMI-CS\3 s\SDP\DBMS\Debug\DBMS.exe
+[2024-01-01 22:54:04] [info] ----------------------------------------------------
+[2024-01-01 22:54:04] [info] Coverage binary generated in file: C:\Users\ACER\AppData\Local\Temp\nizccfqo.e5b
+[2024-01-01 22:54:04] [info] ----------------------------------------------------

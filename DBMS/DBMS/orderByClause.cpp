@@ -51,7 +51,7 @@ std::istream& operator>>(std::istream& istr, OrderByClause& clause)
 	{
 		clause.asc = true;
 	}
-	else if (token.value != ";")
+	else
 	{
 		std::string message = "Unexpected token: " + token.value + "\nExpected: ASC or DESC.";
 		throw std::invalid_argument(message);
