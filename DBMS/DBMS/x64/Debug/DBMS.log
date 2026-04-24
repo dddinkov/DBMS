@@ -1,0 +1,37 @@
+﻿  aggregate.cpp
+  aggregates.cpp
+  assignOperations.cpp
+  btree.cpp
+C:\Users\ACER\Desktop\school\FMI-CS\3 s\SDP\silly\DBMS\DBMS\DBMS\btree.cpp(152,8): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  columnDatatypePairs.cpp
+  columns.cpp
+  condition.cpp
+  createIndex.cpp
+  createTable.cpp
+  dataRow.cpp
+  dataColumn.cpp
+  DBMS.cpp
+  insertInto.cpp
+  insertInto.h
+  operation.cpp
+  orderByClause.cpp
+  primaryKey.cpp
+  query.cpp
+  queryArguments.cpp
+  table.cpp
+  Generating Code...
+  Compiling...
+  tokenizer.cpp
+  btreeTests.cpp
+  operationTests.cpp
+  tableTests.cpp
+  tokenizerTests.cpp
+  update.cpp
+  values.cpp
+  whereClause.cpp
+  whereClauses.cpp
+  Generating Code...
+x64\Debug\insertInto.obj : warning LNK4042: object specified more than once; extras ignored
+  DBMS.vcxproj -> C:\Users\ACER\Desktop\school\FMI-CS\3 s\SDP\silly\DBMS\DBMS\x64\Debug\DBMS.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.

@@ -3,16 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\ACER\\Desktop\\school\\FMI-CS\\3 s\\SDP\\silly\\DBMS\\DBMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DC01BA62-B6B3-4FC2-8A7C-8243EA1BEA47}|DBMS\\DBMS.vcxproj|C:\\Users\\ACER\\Desktop\\school\\FMI-CS\\3 s\\SDP\\silly\\DBMS\\DBMS\\DBMS\\tokenizer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DC01BA62-B6B3-4FC2-8A7C-8243EA1BEA47}|DBMS\\DBMS.vcxproj|solutionrelative:DBMS\\tokenizer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC01BA62-B6B3-4FC2-8A7C-8243EA1BEA47}|DBMS\\DBMS.vcxproj|C:\\Users\\ACER\\Desktop\\school\\FMI-CS\\3 s\\SDP\\silly\\DBMS\\DBMS\\DBMS\\createTable.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DC01BA62-B6B3-4FC2-8A7C-8243EA1BEA47}|DBMS\\DBMS.vcxproj|solutionrelative:DBMS\\createTable.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC01BA62-B6B3-4FC2-8A7C-8243EA1BEA47}|DBMS\\DBMS.vcxproj|C:\\Users\\ACER\\Desktop\\school\\FMI-CS\\3 s\\SDP\\silly\\DBMS\\DBMS\\DBMS\\columns.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DC01BA62-B6B3-4FC2-8A7C-8243EA1BEA47}|DBMS\\DBMS.vcxproj|solutionrelative:DBMS\\columns.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Microsoft\\VC\\v180\\Microsoft.CppBuild.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,40 +18,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "tokenizer.cpp",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\school\\FMI-CS\\3 s\\SDP\\silly\\DBMS\\DBMS\\DBMS\\tokenizer.cpp",
-              "RelativeDocumentMoniker": "DBMS\\tokenizer.cpp",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\school\\FMI-CS\\3 s\\SDP\\silly\\DBMS\\DBMS\\DBMS\\tokenizer.cpp",
-              "RelativeToolTip": "DBMS\\tokenizer.cpp",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-04-24T11:50:33.178Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "createTable.cpp",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\school\\FMI-CS\\3 s\\SDP\\silly\\DBMS\\DBMS\\DBMS\\createTable.cpp",
-              "RelativeDocumentMoniker": "DBMS\\createTable.cpp",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\school\\FMI-CS\\3 s\\SDP\\silly\\DBMS\\DBMS\\DBMS\\createTable.cpp",
-              "RelativeToolTip": "DBMS\\createTable.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-04-24T11:50:01.961Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "columns.h",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\school\\FMI-CS\\3 s\\SDP\\silly\\DBMS\\DBMS\\DBMS\\columns.h",
-              "RelativeDocumentMoniker": "DBMS\\columns.h",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\school\\FMI-CS\\3 s\\SDP\\silly\\DBMS\\DBMS\\DBMS\\columns.h",
-              "RelativeToolTip": "DBMS\\columns.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-24T11:49:54.871Z",
+              "Title": "Microsoft.CppBuild.targets",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Microsoft\\VC\\v180\\Microsoft.CppBuild.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Microsoft\\VC\\v180\\Microsoft.CppBuild.targets",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Microsoft\\VC\\v180\\Microsoft.CppBuild.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Microsoft\\VC\\v180\\Microsoft.CppBuild.targets",
+              "ViewState": "AgIAAMkBAAAAAAAAAAAvwNgBAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2026-04-24T12:24:18.399Z",
               "EditorCaption": ""
             }
           ]
