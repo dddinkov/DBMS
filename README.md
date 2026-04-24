@@ -28,7 +28,9 @@ The architecture is split into three main layers:
 - Unit tests covering core functionality (~80% coverage)
 - Doxygen documentation
 
----## Example Usage
+---
+
+## Example Usage
 
 ```
 CREATE TABLE students (name string, fn int, group int, grade double) PRIMARY KEY fn;
