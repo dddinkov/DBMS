@@ -28,9 +28,11 @@ The architecture is split into three main layers:
 - Unit tests covering core functionality (~80% coverage)
 - Doxygen documentation
 
----
-## Example Usage
+---## Example Usage
+
+```
 CREATE TABLE students (name string, fn int, group int, grade double) PRIMARY KEY fn;
+
 Table "students" created.
 
 INSERT INTO students ("Иван Петров", 1000, 1, 4.00);
@@ -48,5 +50,4 @@ SELECT * FROM students;
 SELECT COUNT(grade) FROM students WHERE grade = 6.00;
 3
 1 row selected.
-
----
+```
