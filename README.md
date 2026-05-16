@@ -1,19 +1,20 @@
 # Database Management System
 
-A minimalistic Database Management System (DBMS) implemented in C++ as part of the Data Structures and Algorithms course at Sofia University (FMI).
+A lightweight SQL interpreter and storage engine implemented from scratch in C++.
 
-This project provides a lightweight SQL-like engine capable of handling basic database operations, with persistent storage and a modular architecture designed for clarity and extensibility.
+Designed and built as a personal deep-dive into how database systems work internally — from query parsing to binary storage.
 
 ---
 
 ## Overview
 
-The system supports core database functionality such as creating tables, inserting records, and executing queries. Data is stored in binary files, and query execution is optimized using B-Tree indexing.
+The system implements a full query execution pipeline based on a formal grammar defined in BNF notation:
 
-The architecture is split into three main layers:
-- **Tokenizer** – Converts raw input into tokens
-- **Parser** – Validates and builds query structures based on a formal grammar
-- **Execution Engine** – Processes queries and interacts with storage
+- **Lexer** — hand-written tokenizer with peek/lookahead support
+- **Parser** — AST-based, validates input against the formal grammar
+- **Execution Engine** — processes queries and interacts with the storage layer
+
+Data is persisted in a custom binary format using `streampos` pointers for direct record access. Query performance is improved through B-Tree indexing with serialization support.
 
 ---
 
@@ -22,34 +23,51 @@ The architecture is split into three main layers:
 - SQL-like query interpreter:
   - `CREATE TABLE`, `CREATE INDEX`
   - `SELECT`, `INSERT INTO`, `UPDATE`
-- Persistent storage using custom binary file format
-- B-Tree indexing for efficient data retrieval
-- Modular layered architecture
-- Unit tests covering core functionality (~80% coverage)
-- Doxygen documentation
+- Custom binary storage engine with persistent data management
+- B-Tree indexing for O(log n) query execution
+- Aggregate functions: `COUNT`, `MIN`, `MAX`, `AVG`, `SUM`
+- `WHERE` clauses and `ORDER BY` support
+- Unit tests with ~80% line coverage using the doctest framework
 
 ---
 
 ## Example Usage
 
 ```
-CREATE TABLE students (name string, fn int, group int, grade double) PRIMARY KEY fn;
+> CREATE TABLE employees (id int, name string, salary double, active bool) PRIMARY KEY id;
+Table "employees" created.
 
-Table "students" created.
-
-INSERT INTO students ("Иван Петров", 1000, 1, 4.00);
+> INSERT INTO employees (1, "Alice", 3500.00, TRUE);
+Record inserted.
+> INSERT INTO employees (2, "Bob", 4200.00, TRUE);
+Record inserted.
+> INSERT INTO employees (3, "Carol", 2800.00, FALSE);
+Record inserted.
+> INSERT INTO employees (4, "David", 5100.00, TRUE);
+Record inserted.
+> INSERT INTO employees (5, "Eve", 3900.00, TRUE);
 Record inserted.
 
-INSERT INTO students ("Мария Иванова", 1000, 2, 5.00);
-ERROR: Duplicate primary key value.
-Record not inserted.
+> SELECT * FROM employees WHERE active = TRUE ORDER BY salary ASC;
+1, "Alice", 3500.00, TRUE
+5, "Eve", 3900.00, TRUE
+2, "Bob", 4200.00, TRUE
+4, "David", 5100.00, TRUE
+4 rows selected.
 
-SELECT * FROM students;
-"Иван Петров", 1000, 1, 4.00
-"Мария Иванова", 1001, 2, 5.00
-5 rows selected.
-
-SELECT COUNT(grade) FROM students WHERE grade = 6.00;
-3
+> SELECT AVG(salary) FROM employees WHERE active = TRUE;
+4175
 1 row selected.
+
+> UPDATE employees SET salary = 4000.00 WHERE id = 3;
+1 row updated.
+
+> CREATE INDEX ON employees (salary);
+Index created.
+
+> SELECT * FROM employees WHERE salary >= 4000.00 ORDER BY salary ASC;
+3, "Carol", 4000.00, FALSE
+2, "Bob", 4200.00, TRUE
+4, "David", 5100.00, TRUE
+3 rows selected.
 ```

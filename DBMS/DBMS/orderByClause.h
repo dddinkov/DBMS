@@ -6,7 +6,7 @@
 /// Struct OrderByClause
 /// 
 /// Following the following grammar rule:
-/// ORDER_BY_CLAUSE = "ORDER" "BY" CONDITION
+/// ORDER_BY_CLAUSE = "ORDER" "BY" COLUMN "ASC" | "DESC" ";"
 /// </summary>
 struct OrderByClause
 {
